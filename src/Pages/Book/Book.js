@@ -14,7 +14,7 @@ const Book = () => {
     const [bookDescription, setBookDescription] = useState('')
     const [bookReviews, setBookReviews] = useState('')
     const [newReviewName, setNewReviewName] = useState('')
-    const [newReviewTitle, setNewReviewTitle] = useState('')
+    const [newReviewRating, setNewReviewRating] = useState()
     const [newReviewBody, setNewReviewBody] = useState('')
 
 
@@ -40,8 +40,33 @@ const Book = () => {
     }, [])
 
     const fullNameHandler = (e) => setNewReviewName(e.target.value)
-    const titleHandler = (e) => setNewReviewTitle(e.target.value)
+    const ratingHandler = (e) => setNewReviewRating(e.target.value)
     const reviewBodyHandler = (e) => setNewReviewBody(e.target.value)
+
+    const formSubmitHandler = (e) => {
+        e.preventDefault()
+        const newReview = {
+            bookId: id,
+            reviewer: newReviewName,
+            rating: newReviewRating,
+            comment: newReviewBody,
+        }
+
+        fetch(`http://localhost:3000/reviews?bookId=${id}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newReview),
+        })
+            .then(response => response.json())
+            .then(({ id }) => {
+                console.log(id)
+                setBookReviews([...bookReviews, { id, ...newReview }]);
+                setNewReviewName('');
+                setNewReviewRating('');
+                setNewReviewBody('');
+            })
+    }
+
     return (
         <Container>
             <div className='book-wrapper'>
@@ -75,14 +100,14 @@ const Book = () => {
                     </ul>
                     {/* visai smagu butu padaryt recommendation (card'us) su book image, title ir author*/}
                     <h2>Ratings & Reviews</h2>
-                    <form>
+                    <form onSubmit={formSubmitHandler}>
                         <div className='form-control'>
                             <label htmlFor='fullName'>Full name:</label>
                             <input onChange={fullNameHandler} name='fullName' type='text'></input>
                         </div>
                         <div className='form-control'>
-                            <label htmlFor='title'>Title:</label>
-                            <input onChange={titleHandler} name='title' type='text'></input>
+                            <label htmlFor='title'>Rating:</label>
+                            <input onChange={ratingHandler} name='title' type='number' min='1' max='5'></input>
                         </div>
                         <div className='form-control'>
                             <label htmlFor='review-textarea'>Write your review:</label>
