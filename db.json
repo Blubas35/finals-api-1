@@ -1,0 +1,92 @@
+
+{
+  "books": [
+  {
+  "id": 1,
+  "title": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "category": "Fiction"
+  },
+  {
+  "id": 2,
+  "title": "1984",
+  "author": "George Orwell",
+  "category": "Fiction"
+  },
+  {
+  "id": 3,
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "category": "Fiction"
+  },
+  {
+  "id": 4,
+  "title": "The Lord of the Rings",
+  "author": "J.R.R. Tolkien",
+  "category": "Fantasy"
+  },
+  {
+  "id": 5,
+  "title": "The Hitchhiker's Guide to the Galaxy",
+  "author": "Douglas Adams",
+  "category": "Science Fiction"
+  },
+  {
+  "id": 6,
+  "title": "Pride and Prejudice",
+  "author": "Jane Austen",
+  "category": "Romance"
+  }
+  ],
+  "reviews": [
+  {
+  "id": 1,
+  "bookId": 1,
+  "rating": 5,
+  "comment": "This is a classic. A must-read for everyone!",
+  "reviewer": "John Doe"
+  },
+  {
+  "id": 2,
+  "bookId": 2,
+  "rating": 4,
+  "comment": "A thought-provoking novel that is still relevant today.",
+  "reviewer": "Jane Smith"
+  },
+  {
+  "id": 3,
+  "bookId": 3,
+  "rating": 3,
+  "comment": "I didn't enjoy this book as much as I thought I would.",
+  "reviewer": "Bob Johnson"
+  },
+  {
+  "id": 4,
+  "bookId": 1,
+  "rating": 4,
+  "comment": "A beautifully written story with memorable characters.",
+  "reviewer": "Alice Brown"
+  },
+  {
+  "id": 5,
+  "bookId": 4,
+  "rating": 5,
+  "comment": "An epic tale that transports you to a different world.",
+  "reviewer": "Tom Jones"
+  },
+  {
+  "id": 6,
+  "bookId": 5,
+  "rating": 4,
+  "comment": "A hilarious and inventive book that never gets old.",
+  "reviewer": "Mary Smith"
+  },
+  {
+  "id": 7,
+  "bookId": 6,
+  "rating": 4,
+  "comment": "A delightful romance with charming characters.",
+  "reviewer": "Sarah Johnson"
+  }
+  ]
+  }
