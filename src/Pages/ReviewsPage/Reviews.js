@@ -22,7 +22,7 @@ const Reviews = () => {
                     <div key={index} className='review-wrapper'>
                         <ul>
                             <li>
-                                <h2>Reviewer: {review.reviewer} has recently reviewed this book: {review.bookId}</h2>
+                                <h2>{review.reviewer} has recently reviewed this book: {review.bookId}</h2>
                                 <div className='review-content'>
                                     <span>{review.comment} </span>
                                     <span>{review.rating}/5</span>
