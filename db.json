@@ -1,48 +1,61 @@
 {
   "books": [
-  {
-  "id": 1,
-  "title": "To Kill a Mockingbird",
-  "author": "Harper Lee",
-  "category": "Fiction"
-  },
-  {
-  "id": 2,
-  "title": "1984",
-  "author": "George Orwell",
-  "category": "Fiction"
-  },
-  {
-  "id": 3,
-  "title": "The Catcher in the Rye",
-  "author": "J.D. Salinger",
-  "category": "Fiction"
-  },
-  {
-  "id": 4,
-  "title": "The Lord of the Rings",
-  "author": "J.R.R. Tolkien",
-  "category": "Fantasy"
-  },
-  {
-  "id": 5,
-  "title": "The Hitchhiker's Guide to the Galaxy",
-  "author": "Douglas Adams",
-  "category": "Science Fiction"
-  },
-  {
-  "id": 6,
-  "title": "Pride and Prejudice",
-  "author": "Jane Austen",
-  "category": "Romance"
-  }
-  ],
+    {
+    "id": 1,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "category": "Fiction",
+    "image": "https://cdn.britannica.com/21/182021-050-666DB6B1/book-cover-To-Kill-a-Mockingbird-many-1961.jpg",
+    "description": "Set in the deep south, this Pulitzer Prize-winning novel follows the story of a young girl named Scout and her father, a lawyer, as they navigate issues of race, justice, and morality in their community."
+    },
+    {
+    "id": 2,
+    "title": "1984",
+    "author": "George Orwell",
+    "category": "Fiction",
+    "image": "https://images.penguinrandomhouse.com/cover/9780451524935",
+    "description": "A dystopian classic, 1984 depicts a world ruled by a totalitarian government where individualism is suppressed and free thinking is punished. The novel remains relevant today as a warning against the dangers of authoritarianism."
+    },
+    {
+    "id": 3,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "category": "Fiction",
+    "image": "https://cdn.britannica.com/94/181394-050-2F76F7EE/Reproduction-cover-edition-The-Catcher-in-the.jpg",
+    "description": "A coming-of-age story that explores themes of alienation and isolation, The Catcher in the Rye follows the experiences of Holden Caulfield, a young man struggling to find his place in the world."
+    },
+    {
+    "id": 4,
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "category": "Fantasy",
+    "image": "https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg",
+    "description": "A high fantasy epic that has captivated readers for generations, The Lord of the Rings tells the story of hobbit Frodo Baggins as he embarks on a perilous journey to destroy the One Ring and save Middle-earth from the dark lord Sauron."
+    },
+    {
+    "id": 5,
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "category": "Science Fiction",
+    "image": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51vfuNNWMTS.jpg",
+    "description": "A comedic science fiction classic, The Hitchhiker's Guide to the Galaxy follows the misadventures of human Arthur Dent and his alien friend Ford Prefect as they travel through space and encounter strange new worlds and civilizations."
+    },
+    {
+    "id": 6,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "category": "Romance",
+    "image": "https://images.penguinrandomhouse.com/cover/9780143105428",
+    "description": "A classic romance novel set in Regency-era England, Pride and Prejudice tells the story of Elizabeth Bennet, a headstrong young woman, and Mr. Darcy, a wealthy gentleman with a reputation for arrogance. The novel explores themes of love, class, and societal expectations."
+    }
+    ],
   "reviews": [
   {
   "id": 1,
   "bookId": 1,
   "rating": 5,
   "comment": "This is a classic. A must-read for everyone!",
+  "image": "https://randomuser.me/api/portraits/women/1.jpg",
   "reviewer": "John Doe"
   },
   {
@@ -50,6 +63,7 @@
   "bookId": 2,
   "rating": 4,
   "comment": "A thought-provoking novel that is still relevant today.",
+  "image": "https://randomuser.me/api/portraits/men/1.jpg",
   "reviewer": "Jane Smith"
   },
   {
@@ -57,6 +71,7 @@
   "bookId": 3,
   "rating": 3,
   "comment": "I didn't enjoy this book as much as I thought I would.",
+  "image": "https://randomuser.me/api/portraits/women/2.jpg",
   "reviewer": "Bob Johnson"
   },
   {
@@ -64,6 +79,7 @@
   "bookId": 1,
   "rating": 4,
   "comment": "A beautifully written story with memorable characters.",
+  "image": "https://randomuser.me/api/portraits/men/2.jpg",
   "reviewer": "Alice Brown"
   },
   {
@@ -71,6 +87,7 @@
   "bookId": 4,
   "rating": 5,
   "comment": "An epic tale that transports you to a different world.",
+  "image": "https://randomuser.me/api/portraits/men/3.jpg",
   "reviewer": "Tom Jones"
   },
   {
@@ -78,6 +95,7 @@
   "bookId": 5,
   "rating": 4,
   "comment": "A hilarious and inventive book that never gets old.",
+  "image": "https://randomuser.me/api/portraits/women/3.jpg",
   "reviewer": "Mary Smith"
   },
   {
@@ -85,6 +103,7 @@
   "bookId": 6,
   "rating": 4,
   "comment": "A delightful romance with charming characters.",
+  "image": "https://randomuser.me/api/portraits/women/2.jpg",
   "reviewer": "Sarah Johnson"
   }
   ]

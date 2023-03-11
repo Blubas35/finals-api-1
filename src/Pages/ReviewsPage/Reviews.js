@@ -6,7 +6,8 @@ const Reviews = () => {
     const [reviewsData, setReviewsData] = useState('')
 
     useEffect(() => {
-        fetch('http://localhost:3000/reviews')
+        fetch('http://localhost:3000/reviews/')
+        // http://localhost:3000/reviews?bookId=1
             .then(res => res.json())
             .then(data => {
                 setReviewsData(data)

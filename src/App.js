@@ -4,6 +4,7 @@ import Books from './Pages/BooksPage/Books';
 import Reviews from './Pages/ReviewsPage/Reviews';
 import MainNavigation from './Pages/MainNavigation/MainNavigation';
 import Book from './Pages/Book/Book';
+import AuthorsPage from './Pages/AuthorsPage/AuthorsPage';
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       <MainNavigation></MainNavigation>
       <Routes>
         <Route path='/books' element={<Books></Books>}></Route>
-        <Route path='/book' element={<Book></Book>}></Route>
+        <Route path='/book/:id' element={<Book></Book>}></Route>
+        <Route path='/author/:authorName' element={<AuthorsPage></AuthorsPage>}></Route>
         <Route path='/reviews' element={<Reviews></Reviews>}></Route>
         <Route path='/' element={
           <div>

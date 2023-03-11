@@ -1,0 +1,97 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "category": "Fiction",
+      "image": "https://cdn.britannica.com/21/182021-050-666DB6B1/book-cover-To-Kill-a-Mockingbird-many-1961.jpg"
+    },
+    {
+      "id": 2,
+      "title": "1984",
+      "author": "George Orwell",
+      "category": "Fiction",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_f0bc34a6-e4a2-4b71-b133-44fb400fed5b?wid=488&hei=488&fmt=pjpeg"
+    },
+    {
+      "id": 3,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "category": "Fiction",
+      "image": "https://cdn.britannica.com/94/181394-050-2F76F7EE/Reproduction-cover-edition-The-Catcher-in-the.jpg"
+    },
+    {
+      "id": 4,
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "category": "Fantasy",
+      "image": "https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 5,
+      "title": "The Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "category": "Science Fiction",
+      "image": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51vfuNNWMTS.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "category": "Romance",
+      "image": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81WHo3-GU-L.jpg"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "bookId": 1,
+      "rating": 5,
+      "comment": "This is a classic. A must-read for everyone!",
+      "reviewer": "John Doe"
+    },
+    {
+      "id": 2,
+      "bookId": 2,
+      "rating": 4,
+      "comment": "A thought-provoking novel that is still relevant today.",
+      "reviewer": "Jane Smith"
+    },
+    {
+      "id": 3,
+      "bookId": 3,
+      "rating": 3,
+      "comment": "I didn't enjoy this book as much as I thought I would.",
+      "reviewer": "Bob Johnson"
+    },
+    {
+      "id": 4,
+      "bookId": 1,
+      "rating": 4,
+      "comment": "A beautifully written story with memorable characters.",
+      "reviewer": "Alice Brown"
+    },
+    {
+      "id": 5,
+      "bookId": 4,
+      "rating": 5,
+      "comment": "An epic tale that transports you to a different world.",
+      "reviewer": "Tom Jones"
+    },
+    {
+      "id": 6,
+      "bookId": 5,
+      "rating": 4,
+      "comment": "A hilarious and inventive book that never gets old.",
+      "reviewer": "Mary Smith"
+    },
+    {
+      "id": 7,
+      "bookId": 6,
+      "rating": 4,
+      "comment": "A delightful romance with charming characters.",
+      "reviewer": "Sarah Johnson"
+    }
+  ]
+}
