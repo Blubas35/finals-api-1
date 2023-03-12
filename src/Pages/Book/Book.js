@@ -12,17 +12,18 @@ const Book = () => {
     const [bookCategory, setBookCategory] = useState('')
     const [bookImage, setBookImage] = useState('')
     const [bookDescription, setBookDescription] = useState('')
-    const [bookReviews, setBookReviews] = useState('')
+    const [bookReviews, setBookReviews] = useState([])
     const [newReviewName, setNewReviewName] = useState('')
     const [newReviewRating, setNewReviewRating] = useState()
     const [newReviewBody, setNewReviewBody] = useState('')
+    const [editReviewId, setEditReviewId] = useState('')
+    const [editMode, setEditMode] = useState(false)
 
 
     useEffect(() => {
         fetch(`http://localhost:3000/books/${id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setBookTitle(data.title)
                 setBookAuthor(data.author)
                 setBookCategory(data.category)
@@ -34,7 +35,6 @@ const Book = () => {
         fetch(`http://localhost:3000/reviews?bookId=${id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setBookReviews(data)
             })
     }, [])
@@ -59,7 +59,6 @@ const Book = () => {
         })
             .then(response => response.json())
             .then(({ id }) => {
-                console.log(id)
                 setBookReviews([...bookReviews, { id, ...newReview }]);
                 setNewReviewName('');
                 setNewReviewRating('');
@@ -67,12 +66,67 @@ const Book = () => {
             })
     }
 
+    const deleteHandler = (reviewId) => {
+        console.log(reviewId)
+        fetch(`http://localhost:3000/reviews/${reviewId}`, {
+            method: 'DELETE',
+        })
+            .then((response) => response.json())
+            .then((json) => {
+                fetch(`http://localhost:3000/reviews?bookId=${id}`)
+                    .then(res => res.json())
+                    .then(postsData => {
+                        setBookReviews(postsData)
+                    });
+            });
+
+    }
+    const editHandler = (reviewData) => {
+        console.log(reviewData)
+
+        setNewReviewName(reviewData.reviewer)
+        setNewReviewRating(reviewData.rating)
+        setNewReviewBody(reviewData.comment)
+        setEditReviewId(reviewData.id)
+        setEditMode(true)
+    }
+
+    const updateReviewHandler = (reviewId) => {
+        console.log(reviewId)
+        fetch(`http://localhost:3000/reviews/${reviewId}`, {
+            method: 'PATCH',
+            body: JSON.stringify({
+                id: 1,
+                reviewer: newReviewName,
+                rating: newReviewRating,
+                comment: newReviewBody,
+                userId: reviewId,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => {
+                fetch(`http://localhost:3000/reviews?bookId=${id}`)
+                .then(res => res.json())
+                .then(reviewData => {
+                    setBookReviews(reviewData)
+                    setNewReviewName('');
+                    setNewReviewRating('');
+                    setNewReviewBody('');
+                    setEditMode(false)
+                });
+            });
+
+    }
+
     return (
         <Container>
             <div className='book-wrapper'>
                 <div className='left-side'>
                     <div className='book-image-wrapper'>
-                        <img src={bookImage} width='300' height='300'></img>
+                        <img src={bookImage} width='300' height='300' alt='book cover image'></img>
                     </div>
                     <div className='button-wrapper'>
                         <button>Buy now!</button>
@@ -103,23 +157,28 @@ const Book = () => {
                     <form onSubmit={formSubmitHandler}>
                         <div className='form-control'>
                             <label htmlFor='fullName'>Full name:</label>
-                            <input onChange={fullNameHandler} name='fullName' type='text'></input>
+                            <input onChange={fullNameHandler} value={newReviewName} name='fullName' type='text'></input>
                         </div>
                         <div className='form-control'>
                             <label htmlFor='title'>Rating:</label>
-                            <input onChange={ratingHandler} name='title' type='number' min='1' max='5'></input>
+                            <input onChange={ratingHandler} value={newReviewRating} name='title' type='number' min='1' max='5'></input>
                         </div>
                         <div className='form-control'>
                             <label htmlFor='review-textarea'>Write your review:</label>
-                            <textarea onChange={reviewBodyHandler} name='review-textarea'></textarea>
+                            <textarea onChange={reviewBodyHandler} value={newReviewBody} name='review-textarea'></textarea>
                         </div>
-                        <input type='submit'></input>
+                        {!editMode && (
+                            <input type='submit' defaultValue='Post review!'></input>
+                        )}
                     </form>
+                    {editMode && (
+                        <button type='submit' onClick={() => updateReviewHandler(editReviewId)}>Save changes!</button>
+                    )}
                     {bookReviews && bookReviews.length > 0 && (
                         bookReviews.map((review, index) => (
                             <div key={index} className='ratings-reviews-wrapper'>
                                 <div className='user-info'>
-                                    <img src={review.image}></img>
+                                    <img src={review.image} alt='user profile photo'></img>
                                     <h4>{review.reviewer}</h4>
                                 </div>
                                 <div className='review-rating-description'>
@@ -130,16 +189,19 @@ const Book = () => {
                                         <span>What user <span style={{ fontWeight: "bold" }}>{review.reviewer}</span>  thinks about this book: </span>
                                         <p>{review.comment}</p>
                                     </div>
+                                    <div className='button-wrapper'>
+                                        <button onClick={() => editHandler(review)}>Edit</button>
+                                        <button onClick={() => deleteHandler(review.id)}>Delete</button>
+                                    </div>
                                 </div>
                             </div>
-
                         )
                         )
 
                     )}
                 </div>
             </div>
-        </Container>
+        </Container >
     )
 }
 

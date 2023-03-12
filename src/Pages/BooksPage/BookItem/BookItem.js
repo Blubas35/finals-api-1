@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Container from '../../../Components/container/Container'
 
 const BookItem = (props) => {
-    const { title, author, id ,category } = props.bookInfo
+    const { title, author, id, category } = props.bookInfo
     return (
         <Container>
             <div className='books-list'>
@@ -16,11 +16,16 @@ const BookItem = (props) => {
                                     <span>{title}</span>
                                 </Link> </h2>
                         </div>
-                        <div>
+                        <div className='book-information-wrapper'>
                             <span>Book author: </span>
                             <Link
-                            to={'/author/' + author}
-                            ><span>{author}</span></Link>
+                                to={'/author/' + author}
+                            >
+                                <span>{author}</span>
+                            </Link>
+                            <div className='book-category-wrapper'>
+                                <span>Genre: {category}</span>
+                            </div>
                         </div>
                     </li>
                 </ul>
