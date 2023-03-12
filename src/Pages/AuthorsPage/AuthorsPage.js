@@ -13,8 +13,6 @@ const AuthorsPage = () => {
     const [bookTitle, setBookTitle] = useState('')
     const [editMode, setEditMode] = useState(false)
 
-    console.log(authorId)
-
     useEffect(() => {
         fetch(`http://localhost:3000/books?authorId=${authorId}`)
             .then(res => res.json())
@@ -24,11 +22,52 @@ const AuthorsPage = () => {
             })
     }, [])
 
+    const fullNameHandler = (e) => setAuthorName(e.target.value)
+    const imageUrlHandler = (e) => setAuthorImage(e.target.value)
+    const authorDescriptionHandler= (e) => setAuthorDescription(e.target.value)
+
+
+    const editAuthorHandler = (authorInfo) => {
+        console.log(authorInfo)
+        const { author, authorDescription, authorImage } = authorInfo
+
+        setAuthorName(author)
+        setAuthorImage(authorImage)
+        setAuthorDescription(authorDescription)
+        // setEditMode(true)
+    }
+
+    const submitFormHandler = (e) => {
+        e.preventDefault()
+        fetch(`http://localhost:3000/books?authorId=${authorId}`, {
+            method: 'PATCH',
+            body: JSON.stringify({
+                id: 1,
+                author: authorDescription,
+                authorImage,
+                authorDescription,
+            }),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+          })
+            .then((response) => response.json())
+            .then((json) => {
+                fetch(`http://localhost:3000/books?authorId=${authorId}`)
+                    .then(res=> res.json())
+                    .then(data => {
+                        console.log(data)
+                    })
+            });
+          
+    }
+
     return (
         <Container>
             {authorInformation && authorInformation.length > 0 && (
-                authorInformation.map(info => (
-                    <div className='author-information-wrapper'>
+                authorInformation.map((info, index) => (
+
+                    <div key={index} className='author-information-wrapper'>
                         <div className='author-personal-info-wrapper'>
                             <h2 className='author-name'>{info.author}</h2>
                             <div className='author-image-wrapper'>
@@ -39,24 +78,26 @@ const AuthorsPage = () => {
                             <h2 className='biography-title'>About the author</h2>
                             <p className='biography-content'>{info.authorDescription}</p>
                         </div>
-                        <button className='edit-author'>Edit author</button>
+                        <button className='edit-author' onClick={() => editAuthorHandler(info)}>Edit author</button>
+
                         {!editMode && (
-                            <form>
+                            <form onSubmit={submitFormHandler}>
                                 <div className='form-control'>
                                     <label htmlFor='fullName'>Authors full name: </label>
-                                    <input name='fullName' type='text' value={authorName}></input>
+                                    <input name='fullName' type='text' value={authorName} onChange={fullNameHandler}></input>
                                 </div>
                                 <div className='form-control'>
                                     <label htmlFor='author-image'>Authors image url:  </label>
-                                    <input name='author-image' type='text' value={authorImage}></input>
+                                    <input name='author-image' type='text' value={authorImage} onChange={imageUrlHandler}></input>
                                 </div>
                                 <div className='form-control'>
                                     <label htmlFor='author-description'>Authors description: </label>
-                                    <textarea name='author-description' type='text' value={authorDescription}></textarea>
+                                    <textarea name='author-description' type='text' value={authorDescription} onChange={authorDescriptionHandler} rows="10" cols="75"></textarea>
                                 </div>
                                 <input type='submit' value='Save changes!'></input>
                             </form>
                         )}
+
                         <section className='recommended-book-list'>
                             <h3>If you are interested in {info.author} writing style. Check out these books:</h3>
                             <div className='recommended-book-card'>
