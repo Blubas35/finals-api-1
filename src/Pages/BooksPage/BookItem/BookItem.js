@@ -4,9 +4,7 @@ import Container from '../../../Components/container/Container'
 
 const BookItem = (props) => {
     const { title, author, authorId, id, category, } = props.bookInfo
-    console.log(props.bookInfo)
     return (
-        <Container>
             <div className='books-list'>
                 <ul>
                     <li>
@@ -31,7 +29,6 @@ const BookItem = (props) => {
                     </li>
                 </ul>
             </div>
-        </Container>
     )
 }
 

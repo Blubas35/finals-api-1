@@ -5,6 +5,7 @@ import Reviews from './Pages/ReviewsPage/Reviews';
 import MainNavigation from './Pages/MainNavigation/MainNavigation';
 import Book from './Pages/Book/Book';
 import AuthorsPage from './Pages/AuthorsPage/AuthorsPage';
+import Results from './Pages/Results';
 
 
 function App() {

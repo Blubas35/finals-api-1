@@ -9,6 +9,7 @@ const Book = () => {
 
     const [bookTitle, setBookTitle] = useState('')
     const [bookAuthor, setBookAuthor] = useState('')
+    const [bookAuthorId, setBookAuthorId] = useState('')
     const [bookCategory, setBookCategory] = useState('')
     const [bookImage, setBookImage] = useState('')
     const [bookDescription, setBookDescription] = useState('')
@@ -29,6 +30,7 @@ const Book = () => {
                 setBookCategory(data.category)
                 setBookImage(data.image)
                 setBookDescription(data.description)
+                setBookAuthorId(data.authorId)
             })
     }, [])
     useEffect(() => {
@@ -141,7 +143,7 @@ const Book = () => {
                             </div>
                             <div className='book-information'>
                                 <span>Book author: </span>
-                                <Link><span>{bookAuthor}</span></Link>
+                                <Link to={'/author/' + bookAuthorId}><span>{bookAuthor}</span></Link>
 
                                 <div className='book-description'>
                                     <h3>About the book:</h3>

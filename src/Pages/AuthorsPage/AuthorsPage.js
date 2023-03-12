@@ -34,7 +34,7 @@ const AuthorsPage = () => {
         setAuthorName(author)
         setAuthorImage(authorImage)
         setAuthorDescription(authorDescription)
-        // setEditMode(true)
+        setEditMode(true)
     }
 
     const submitFormHandler = (e) => {
@@ -57,6 +57,7 @@ const AuthorsPage = () => {
                     .then(res=> res.json())
                     .then(data => {
                         console.log(data)
+                        setEditMode(true)
                     })
             });
           
@@ -80,7 +81,7 @@ const AuthorsPage = () => {
                         </div>
                         <button className='edit-author' onClick={() => editAuthorHandler(info)}>Edit author</button>
 
-                        {!editMode && (
+                        {editMode && (
                             <form onSubmit={submitFormHandler}>
                                 <div className='form-control'>
                                     <label htmlFor='fullName'>Authors full name: </label>
