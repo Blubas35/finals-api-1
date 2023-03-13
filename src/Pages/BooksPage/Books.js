@@ -13,6 +13,7 @@ const Books = () => {
     const [selectedInput, setSelectedInput] = useState('Fiction')
     const [searchResults, setSearchResults] = useState(null)
     const [keyword, setKeyword] = useState('')
+    const [isLoading, setIsLoading] = useState(true)
 
 
     useEffect(() => {
@@ -21,6 +22,7 @@ const Books = () => {
             .then(data => {
                 console.log(data)
                 setBooksData(data)
+                setIsLoading(false)
             })
 
     }, [])
@@ -54,47 +56,53 @@ const Books = () => {
 
     return (
         <Container>
-            {searchResults ? (
-                <>
-                    <h2>Book list with selected category ({selectedInput})</h2>
-                    <button onClick={returnListHandler}>Return to the full list</button>
-
-                    {searchResults.map((book, index) =>
-                    (
-                        <BookItem key={index} bookInfo={book}></BookItem>
-                    ))}
-                </>
+            {isLoading ? (
+                <div>Loading...</div>
             ) : (
-                <>
-                    <header>
-                        <form onSubmit={formSubmitHandler}>
-                            <select onChange={optionValue} value={selectedInput}>
-                                {categories.map((category, index) => {
-                                    return (
+                searchResults ? (
+                    <>
+                        <h2>Book list with selected category ({selectedInput})</h2>
+                        <button onClick={returnListHandler}>Return to the full list</button>
+
+                        {searchResults.map((book, index) => (
+                            <BookItem key={index} bookInfo={book} />
+                        ))}
+                    </>
+                ) : (
+                    <>
+                        <header>
+                            <form onSubmit={formSubmitHandler}>
+                                <select onChange={optionValue} value={selectedInput}>
+                                    {categories.map((category, index) => (
                                         <option key={index}>{firstLetterUpperCase(category)}</option>
-                                    )
-                                })}
-                            </select>
-                            <input type='submit' value='Search By Genre'></input>
-                        </form>
+                                    ))}
+                                </select>
+                                <input type='submit' value='Search By Genre' />
+                            </form>
 
+                            <input
+                                type='text'
+                                name='keyword'
+                                onChange={keywordHandler}
+                                value={keyword}
+                                placeholder='Search...'
+                            />
+                            <Link to={'/search/' + keyword}>
+                                <button>Search by keyword</button>
+                            </Link>
+                        </header>
 
-                        <input type='text' name='keyword' onChange={keywordHandler} value={keyword} placeholder='Search...'></input>
-                        <Link to={'/search/' + keyword}><button>Search by keyword</button></Link>
-
-                    </header>
-                    <h1>Books list</h1>
-                    {booksData && booksData.length > 0 && (
-                        booksData.map((book, index) =>
-                        (
-                            <BookItem key={index} bookInfo={book}></BookItem>
-                        )
-                        )
-                    )}
-                </>
+                        <h1>Books list</h1>
+                        {booksData.length > 0 ? (
+                            booksData.map((book, index) => (
+                                <BookItem key={index} bookInfo={book} />
+                            ))
+                        ) : (
+                            <h2>No results found...</h2>
+                        )}
+                    </>
+                )
             )}
-
-
         </Container>
     )
 }
