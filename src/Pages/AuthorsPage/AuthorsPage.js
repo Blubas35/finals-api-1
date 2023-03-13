@@ -82,7 +82,7 @@ const AuthorsPage = () => {
                     <h2 className='biography-title'>About the author</h2>
                     <p className='biography-content'>{authorInformation.description}</p>
                 </div>
-                <button className='edit-author' onClick={() => editAuthorHandler(authorInformation)}>Edit author</button>
+                <button className='button' onClick={() => editAuthorHandler(authorInformation)}>Edit author</button>
 
                 {editMode && (
                     <form onSubmit={submitFormHandler}>
@@ -98,7 +98,7 @@ const AuthorsPage = () => {
                             <label htmlFor='author-description'>Authors description: </label>
                             <textarea name='author-description' type='text' value={authorDescription} onChange={authorDescriptionHandler} rows="10" cols="75"></textarea>
                         </div>
-                        <input type='submit' value='Save changes!'></input>
+                        <input className='button' type='submit' value='Save changes!'></input>
                     </form>
                 )}
                 {bookInformation && bookInformation.length > 0 && (

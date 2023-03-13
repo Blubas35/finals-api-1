@@ -4,6 +4,7 @@ import Container from '../../Components/container/Container'
 import BookItem from './BookItem/BookItem'
 import { firstLetterUpperCase } from '../../Components/functions/Function'
 import { Link } from 'react-router-dom'
+import './Book.scss'
 
 
 const Books = () => {
@@ -62,7 +63,7 @@ const Books = () => {
                 searchResults ? (
                     <>
                         <h2>Book list with selected category ({selectedInput})</h2>
-                        <button onClick={returnListHandler}>Return to the full list</button>
+                        <button className='button' onClick={returnListHandler}>Return to the full list</button>
 
                         {searchResults.map((book, index) => (
                             <BookItem key={index} bookInfo={book} />
@@ -77,7 +78,7 @@ const Books = () => {
                                         <option key={index}>{firstLetterUpperCase(category)}</option>
                                     ))}
                                 </select>
-                                <input type='submit' value='Search By Genre' />
+                                <input className='button' type='submit' value='Search By Genre' />
                             </form>
 
                             <input
@@ -88,15 +89,18 @@ const Books = () => {
                                 placeholder='Search...'
                             />
                             <Link to={'/search/' + keyword}>
-                                <button>Search by keyword</button>
+                                <button className='button'>Search by keyword</button>
                             </Link>
                         </header>
 
                         <h1>Books list</h1>
                         {booksData.length > 0 ? (
-                            booksData.map((book, index) => (
+                            <div className='books-list'>
+                                {booksData.map((book, index) => (
                                 <BookItem key={index} bookInfo={book} />
-                            ))
+                                ))}
+
+                            </div>
                         ) : (
                             <h2>No results found...</h2>
                         )}

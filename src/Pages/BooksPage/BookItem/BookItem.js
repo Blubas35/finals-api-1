@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 const BookItem = (props) => {
     const { title, author, authorId, id, category, image} = props.bookInfo
     return (
-        <div className='books-list'>
-            <ul>
+            <ul className='list-wrapper'>
                 <li>
                     <div className='book-left-side'>
                         <div className='book-cover-wrapper'>
@@ -34,7 +33,6 @@ const BookItem = (props) => {
                     </div>
                 </li>
             </ul>
-        </div>
     )
 }
 

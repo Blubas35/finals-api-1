@@ -130,8 +130,8 @@ const Book = () => {
                         <img src={bookImage} width='300' height='300' alt='book cover'></img>
                     </div>
                     <div className='button-wrapper'>
-                        <button>Buy now!</button>
-                        <button>Sign up to read!</button>
+                        <button className='button' >Buy now!</button>
+                        <button className='button' >Sign up to read!</button>
                     </div>
                 </div>
                 <div className='right-side'>
@@ -169,11 +169,11 @@ const Book = () => {
                             <textarea onChange={reviewBodyHandler} value={newReviewBody} name='review-textarea'></textarea>
                         </div>
                         {!editMode && (
-                            <input type='submit' defaultValue='Post review!'></input>
+                            <input className='button'  type='submit' defaultValue='Post review!'></input>
                         )}
                     </form>
                     {editMode && (
-                        <button type='submit' onClick={() => updateReviewHandler(editReviewId)}>Save changes!</button>
+                        <button className='button'  type='submit' onClick={() => updateReviewHandler(editReviewId)}>Save changes!</button>
                     )}
                     {bookReviews && bookReviews.length > 0 && (
                         bookReviews.map((review, index) => (
@@ -191,8 +191,8 @@ const Book = () => {
                                         <p>{review.comment}</p>
                                     </div>
                                     <div className='button-wrapper'>
-                                        <button onClick={() => editHandler(review)}>Edit</button>
-                                        <button onClick={() => deleteHandler(review.id)}>Delete</button>
+                                        <button className='button'  onClick={() => editHandler(review)}>Edit</button>
+                                        <button className='button'  onClick={() => deleteHandler(review.id)}>Delete</button>
                                     </div>
                                 </div>
                             </div>

@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { Link, Route, Routes } from 'react-router-dom';
 import Books from './Pages/BooksPage/Books';
 import Reviews from './Pages/ReviewsPage/Reviews';
