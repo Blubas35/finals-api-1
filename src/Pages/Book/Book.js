@@ -15,11 +15,10 @@ const Book = () => {
     const [bookDescription, setBookDescription] = useState('')
     const [bookReviews, setBookReviews] = useState([])
     const [newReviewName, setNewReviewName] = useState('')
-    const [newReviewRating, setNewReviewRating] = useState()
+    const [newReviewRating, setNewReviewRating] = useState(1)
     const [newReviewBody, setNewReviewBody] = useState('')
     const [editReviewId, setEditReviewId] = useState('')
     const [editMode, setEditMode] = useState(false)
-
 
     useEffect(() => {
         fetch(`http://localhost:3000/books/${id}`)
@@ -32,14 +31,14 @@ const Book = () => {
                 setBookDescription(data.description)
                 setBookAuthorId(data.authorId)
             })
-    }, [])
+    }, [id])
     useEffect(() => {
         fetch(`http://localhost:3000/reviews?bookId=${id}`)
             .then(res => res.json())
             .then(data => {
                 setBookReviews(data)
             })
-    }, [])
+    }, [id])
 
     const fullNameHandler = (e) => setNewReviewName(e.target.value)
     const ratingHandler = (e) => setNewReviewRating(e.target.value)
@@ -128,7 +127,7 @@ const Book = () => {
             <div className='book-wrapper'>
                 <div className='left-side'>
                     <div className='book-image-wrapper'>
-                        <img src={bookImage} width='300' height='300' alt='book cover image'></img>
+                        <img src={bookImage} width='300' height='300' alt='book cover'></img>
                     </div>
                     <div className='button-wrapper'>
                         <button>Buy now!</button>

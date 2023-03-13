@@ -3,11 +3,9 @@
     {
       "id": 1,
       "title": "To Kill a Mockingbird",
-      "author": "Harper Lee",
       "authorId": 1,
-      "authorDescription": "Harper Lee was an American author best known for her Pulitzer Prize-winning novel, 'To Kill a Mockingbird'. Born in Alabama in 1926, Lee studied law at the University of Alabama before moving to New York City to pursue a writing career. 'To Kill a Mockingbird' was published in 1960 and became an instant classic, exploring issues of race, justice, and morality through the eyes of a young girl named Scout. Despite the success of her first novel, Lee lived a relatively private life and did not publish another book until the controversial release of 'Go Set a Watchman' in 2015. Lee died in 2016 at the age of 89.",
-      "authorImage": "https://i.guim.co.uk/img/media/b951fa329f11d1cf46eb348dd34c909f06cdd704/367_29_2633_1580/master/2633.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=43d54dab0092767d865be83baf235161",
-      "category": "fiction",
+      "author": "Harper Lee",
+      "category": "Fiction",
       "image": "https://cdn.britannica.com/21/182021-050-666DB6B1/book-cover-To-Kill-a-Mockingbird-many-1961.jpg",
       "description": "Set in the deep south, this Pulitzer Prize-winning novel follows the story of a young girl named Scout and her father, a lawyer, as they navigate issues of race, justice, and morality in their community."
     },
@@ -16,55 +14,83 @@
       "title": "1984",
       "author": "George Orwell",
       "authorId": 2,
-      "authorDescription": "George Orwell was an English novelist and essayist known for his political commentary and dystopian fiction. Born in India in 1903, Orwell studied at Eton College and served as a police officer in Burma before turning to writing full-time. His most famous works include 'Animal Farm' and '1984', both of which explore the dangers of totalitarianism and the importance of individualism and free thought. Orwell's writing is characterized by his clear, concise prose and his commitment to social justice. He died in 1950 at the age of 46.",
-      "authorImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/George_Orwell%2C_c._1940_%2841928180381%29.jpg/800px-George_Orwell%2C_c._1940_%2841928180381%29.jpg",
-      "category": "fiction",
+      "category": "Fiction",
       "image": "https://images.penguinrandomhouse.com/cover/9780451524935",
       "description": "A dystopian classic, 1984 depicts a world ruled by a totalitarian government where individualism is suppressed and free thinking is punished. The novel remains relevant today as a warning against the dangers of authoritarianism."
     },
     {
       "id": 3,
       "title": "The Catcher in the Rye",
-      "author": "J.D. Salinger",
       "authorId": 3,
-      "authorDescription": "J.D. Salinger was an American author best known for his novel 'The Catcher in the Rye'. Born in New York City in 1919, Salinger studied at several colleges before serving in World War II. His experiences in the war greatly influenced his writing, and he published several short stories before releasing 'The Catcher in the Rye' in 1951. The novel, which follows the experiences of a young man struggling with alienation and isolation, became an instant classic and has remained popular with readers ever since. Salinger lived a reclusive life in New Hampshire until his death in 2010 at the age of 91.",
-      "authorImage": "https://media.newyorker.com/photos/590951a96552fa0be682be33/master/pass/gopnik-salinger.jpg",
-      "category": "fiction",
+      "author": "J.D. Salinger",
+      "category": "Fiction",
       "image": "https://cdn.britannica.com/94/181394-050-2F76F7EE/Reproduction-cover-edition-The-Catcher-in-the.jpg",
       "description": "A coming-of-age story that explores themes of alienation and isolation, The Catcher in the Rye follows the experiences of Holden Caulfield, a young man struggling to find his place in the world."
     },
     {
       "id": 4,
       "title": "The Lord of the Rings",
-      "author": "J.R.R. Tolkien",
       "authorId": 4,
-      "authorDescription": "J.R.R. Tolkien was an English writer and academic, best known for his epic high fantasy novels 'The Hobbit' and 'The Lord of the Rings'. He created detailed, imaginative worlds with complex mythologies and languages, and his works have had a profound impact on the fantasy genre.",
-      "authorImage": "https://variety.com/wp-content/uploads/2017/07/j-rr-tolkein.jpg?w=681&h=383&crop=1",
-      "category": "fantasy",
+      "author": "J.R.R. Tolkien",
+      "category": "Fantasy",
       "image": "https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg",
       "description": "A high fantasy epic that has captivated readers for generations, The Lord of the Rings tells the story of hobbit Frodo Baggins as he embarks on a perilous journey to destroy the One Ring and save Middle-earth from the dark lord Sauron."
     },
     {
       "id": 5,
       "title": "The Hitchhiker's Guide to the Galaxy",
-      "author": "Douglas Adams",
       "authorId": 5,
-      "authorDescription": "Douglas Adams was a British writer and humorist, best known for his science fiction series 'The Hitchhiker's Guide to the Galaxy'. He was known for his wit and irreverent sense of humor, which he applied to a wide range of topics, from science to politics. His writing often explored philosophical and existential themes, and his works continue to be popular among fans of science fiction and humor.",
-      "authorImage": "https://www.telegraph.co.uk/content/dam/books/2016/05/25/adamscat_trans_NvBQzQNjv4BqyS02hinoGW_xcfEJDQ7ED0Oz222ZKgVAgL2atyHK4VQ.jpg",
-      "category": "science fiction",
+      "author": "Douglas Adams",
+      "category": "Science fiction",
       "image": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51vfuNNWMTS.jpg",
       "description": "A comedic science fiction classic, The Hitchhiker's Guide to the Galaxy follows the misadventures of human Arthur Dent and his alien friend Ford Prefect as they travel through space and encounter strange new worlds and civilizations."
     },
     {
       "id": 6,
       "title": "Pride and Prejudice",
-      "author": "Jane Austen",
       "authorId": 6,
-      "authorDescription": "Jane Austen was an English novelist known for her witty, insightful portrayals of social life in Regency-era England. Her novels, including 'Pride and Prejudice' and 'Sense and Sensibility', often centered around the themes of marriage, money, and social class. Austen's writing was characterized by her sharp social commentary and keen observation of human behavior, and she is considered one of the most important and influential writers in English literature.",
-      "authorImage": "https://cdn.britannica.com/12/172012-050-A9AFF8AF/Jane-Austen-Cassandra-engraving-portrait-1810.jpg",
-      "category": "romance",
+      "author": "Jane Austen",
+      "category": "Romance",
       "image": "https://images.penguinrandomhouse.com/cover/9780143105428",
       "description": "A classic romance novel set in Regency-era England, Pride and Prejudice tells the story of Elizabeth Bennet, a headstrong young woman, and Mr. Darcy, a wealthy gentleman with a reputation for arrogance. The novel explores themes of love, class, and societal expectations."
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "Harper Lee",
+      "description": "Harper Lee was an American author best known for her Pulitzer Prize-winning novel, 'To Kill a Mockingbird'. Born in Alabama in 1926, Lee studied law at the University of Alabama before moving to New York City to pursue a writing career. 'To Kill a Mockingbird' was published in 1960 and became an instant classic, exploring issues of race, justice, and morality through the eyes of a young girl named Scout. Despite the success of her first novel, Lee lived a relatively private life and did not publish another book until the controversial release of 'Go Set a Watchman' in 2015. Lee died in 2016 at the age of 89.",
+      "image": "https://i.guim.co.uk/img/media/b951fa329f11d1cf46eb348dd34c909f06cdd704/367_29_2633_1580/master/2633.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=43d54dab0092767d865be83baf235161"
+    },
+    {
+      "id": 2,
+      "name": "George Orwell",
+      "description": "George Orwell was an English novelist and essayist known for his political commentary and dystopian fiction. Born in India in 1903, Orwell studied at Eton College and served as a police officer in Burma before turning to writing full-time. His most famous works include 'Animal Farm' and '1984', both of which explore the dangers of totalitarianism and the importance of individualism and free thought. Orwell's writing is characterized by his clear, concise prose and his commitment to social justice. He died in 1950 at the age of 46.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/George_Orwell%2C_c._1940_%2841928180381%29.jpg/800px-George_Orwell%2C_c._1940_%2841928180381%29.jpg"
+    },
+    {
+      "id": 3,
+      "name": "J.D. Salinger",
+      "description": "J.D. Salinger was an American author best known for his novel 'The Catcher in the Rye'. Born in New York City in 1919, Salinger studied at several colleges before serving in World War II. His experiences in the war greatly influenced his writing, and he published several short stories before releasing 'The Catcher in the Rye' in 1951. The novel, which follows the experiences of a young man struggling with alienation and isolation, became an instant classic and has remained popular with readers ever since. Salinger lived a reclusive life in New Hampshire until his death in 2010 at the age of 91.",
+      "image": "https://media.newyorker.com/photos/590951a96552fa0be682be33/master/pass/gopnik-salinger.jpg"
+    },
+    {
+      "id": 4,
+      "name": "J.R.R. Tolkien",
+      "description": "J.R.R. Tolkien was an English writer and academic, best known for his epic high fantasy novels 'The Hobbit' and 'The Lord of the Rings'. He created detailed, imaginative worlds with complex mythologies and languages, and his works have had a profound impact on the fantasy genre.",
+      "image": "https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Douglas Adams",
+      "description": "Douglas Adams was a British writer and humorist, best known for his science fiction series 'The Hitchhiker's Guide to the Galaxy'. He was known for his wit and irreverent sense of humor, which he applied to a wide range of topics, from science to politics. His writing often explored philosophical and existential themes, and his works continue to be popular among fans of science fiction and humor.",
+      "image": "https://www.telegraph.co.uk/content/dam/books/2016/05/25/adamscat_trans_NvBQzQNjv4BqyS02hinoGW_xcfEJDQ7ED0Oz222ZKgVAgL2atyHK4VQ.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Jane Austen",
+      "description": "Jane Austen was an English novelist known for her witty, insightful portrayals of social life in Regency-era England. Her novels, including 'Pride and Prejudice' and 'Sense and Sensibility', often centered around the themes of marriage, money, and social class. Austen's writing was characterized by her sharp social commentary and keen observation of human behavior, and she is considered one of the most important and influential writers in English literature.",
+      "image": "https://cdn.britannica.com/12/172012-050-A9AFF8AF/Jane-Austen-Cassandra-engraving-portrait-1810.jpg"
     }
   ],
   "reviews": [
@@ -74,8 +100,7 @@
       "rating": 5,
       "comment": "This is a classic. A must-read for everyone!",
       "image": "https://randomuser.me/api/portraits/women/1.jpg",
-      "reviewer": "John Doe",
-      "userId": 1
+      "reviewer": "John Doe"
     },
     {
       "id": 2,
@@ -124,6 +149,20 @@
       "comment": "A delightful romance with charming characters.",
       "image": "https://randomuser.me/api/portraits/women/2.jpg",
       "reviewer": "Sarah Johnson"
+    }
+  ],
+  "category": [
+    {
+      "genre": "fiction"
+    },
+    {
+      "genre": "fantasy"
+    },
+    {
+      "genre": "science fiction"
+    },
+    {
+      "genre": "romance"
     }
   ]
 }

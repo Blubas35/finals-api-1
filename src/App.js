@@ -5,7 +5,8 @@ import Reviews from './Pages/ReviewsPage/Reviews';
 import MainNavigation from './Pages/MainNavigation/MainNavigation';
 import Book from './Pages/Book/Book';
 import AuthorsPage from './Pages/AuthorsPage/AuthorsPage';
-import Results from './Pages/Results';
+import Search from './Pages/Search/Search';
+import HomePage from './Pages/HomePage/HomePage';
 
 
 function App() {
@@ -14,10 +15,12 @@ function App() {
     <div className="App">
       <MainNavigation></MainNavigation>
       <Routes>
+        <Route path='/homePage' element={<HomePage />}/>
         <Route path='/books' element={<Books></Books>}></Route>
         <Route path='/book/:id' element={<Book></Book>}></Route>
         <Route path='/author/:authorId' element={<AuthorsPage></AuthorsPage>}></Route>
         <Route path='/reviews' element={<Reviews></Reviews>}></Route>
+        <Route path='/search/:keyword' element={<Search />}/>
         <Route path='/' element={
           <div>
             <Link to='/books'>Books</Link>

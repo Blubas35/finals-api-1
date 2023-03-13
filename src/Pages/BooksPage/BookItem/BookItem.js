@@ -1,13 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Container from '../../../Components/container/Container'
 
 const BookItem = (props) => {
-    const { title, author, authorId, id, category, } = props.bookInfo
+    const { title, author, authorId, id, category, image} = props.bookInfo
     return (
-            <div className='books-list'>
-                <ul>
-                    <li>
+        <div className='books-list'>
+            <ul>
+                <li>
+                    <div className='book-left-side'>
+                        <div className='book-cover-wrapper'>
+                            <img src={image} alt='book cover' width='100'></img>
+                        </div>
+                    </div>
+                    <div className='book-right-side'>
                         <div className='book-title-wrapper'>
                             <h2>Title of the book:
                                 <Link
@@ -26,9 +31,10 @@ const BookItem = (props) => {
                                 <span>Genre: {category}</span>
                             </div>
                         </div>
-                    </li>
-                </ul>
-            </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     )
 }
 

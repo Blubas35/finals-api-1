@@ -6,7 +6,7 @@ const MainNavigation = () => {
         <Container>
             <ul className='main-navigation'>
                 <li>
-                    <NavLink to='/'>Home page</NavLink>
+                    <NavLink to='/homePage'>Home page</NavLink>
                 </li>
                 <li>
                     <NavLink to='/reviews'>Reviews page</NavLink>
