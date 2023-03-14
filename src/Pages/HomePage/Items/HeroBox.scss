@@ -16,4 +16,11 @@
     box-shadow: 12px 13px 40px -13px rgba(0, 0, 0, 0.52);
     -webkit-box-shadow: 12px 13px 40px -13px rgba(0, 0, 0, 0.52);
     -moz-box-shadow: 12px 13px 40px -13px rgba(0, 0, 0, 0.52);
+    @media only screen and (min-width: 481px) and (max-width: 950px) {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
 }

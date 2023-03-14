@@ -1,6 +1,12 @@
 .page-content-wrapper {
     display: flex;
     column-gap: 50px;
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        flex-wrap: wrap;
+    }
+    @media only screen and (min-width: 481px) and (max-width: 950px) {
+        flex-wrap: wrap;
+    }
 }
 
 .selling-point-wrapper {
@@ -27,4 +33,10 @@
 
 .left-container {
     width: calc((100% - 30px) / 4 * 3);
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        width: 100%;
+    }
+    @media only screen and (min-width: 481px) and (max-width: 950px) {
+        width: 100%;
+    }
 }

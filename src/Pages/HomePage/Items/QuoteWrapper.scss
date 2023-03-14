@@ -1,7 +1,12 @@
 .quote-content-wrapper {
     display: flex;
     column-gap: 30px;
-  }
-  .quote-text {
+}
+
+.quote-text {
     align-self: center;
-  }
+}
+
+.quote-author-image {
+    border-radius: 50%;
+}

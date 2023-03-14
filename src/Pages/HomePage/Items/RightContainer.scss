@@ -3,6 +3,14 @@
     row-gap: 30px;
     display: flex;
     flex-direction: column;
+
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        width: 100%;
+    }
+
+    @media only screen and (min-width: 481px) and (max-width: 950px) {
+        width: 100%;
+    }
 }
 
 .right-container-title {
