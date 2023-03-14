@@ -1,0 +1,36 @@
+.review-form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+
+    & .form-control {
+        display: flex;
+        justify-content: space-between;
+
+        & .input-review {
+            width: 64%;
+        }
+
+        & .rating-input {
+            width: 62%;
+        }
+
+        & .textarea-review {
+            resize: both;
+            width: 249px;
+            height: 124px;
+        }
+    }
+
+    .form-button {
+        width: 50%;
+        align-self: center;
+        margin-top: 15px;
+        border: 1px solid;
+        &:hover {
+            background-color: white;
+            color: #4CAF50;
+            border: 1px solid;
+        }
+    }
+}

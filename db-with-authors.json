@@ -3,7 +3,6 @@
     {
       "id": 1,
       "title": "To Kill a Mockingbird",
-      "authorId": 1,
       "author": "Harper Lee",
       "category": "Fiction",
       "image": "https://cdn.britannica.com/21/182021-050-666DB6B1/book-cover-To-Kill-a-Mockingbird-many-1961.jpg",
@@ -13,7 +12,6 @@
       "id": 2,
       "title": "1984",
       "author": "George Orwell",
-      "authorId": 2,
       "category": "Fiction",
       "image": "https://images.penguinrandomhouse.com/cover/9780451524935",
       "description": "A dystopian classic, 1984 depicts a world ruled by a totalitarian government where individualism is suppressed and free thinking is punished. The novel remains relevant today as a warning against the dangers of authoritarianism."
@@ -21,7 +19,6 @@
     {
       "id": 3,
       "title": "The Catcher in the Rye",
-      "authorId": 3,
       "author": "J.D. Salinger",
       "category": "Fiction",
       "image": "https://cdn.britannica.com/94/181394-050-2F76F7EE/Reproduction-cover-edition-The-Catcher-in-the.jpg",
@@ -30,7 +27,6 @@
     {
       "id": 4,
       "title": "The Lord of the Rings",
-      "authorId": 4,
       "author": "J.R.R. Tolkien",
       "category": "Fantasy",
       "image": "https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg",
@@ -39,16 +35,14 @@
     {
       "id": 5,
       "title": "The Hitchhiker's Guide to the Galaxy",
-      "authorId": 5,
       "author": "Douglas Adams",
-      "category": "Science fiction",
+      "category": "Science Fiction",
       "image": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51vfuNNWMTS.jpg",
       "description": "A comedic science fiction classic, The Hitchhiker's Guide to the Galaxy follows the misadventures of human Arthur Dent and his alien friend Ford Prefect as they travel through space and encounter strange new worlds and civilizations."
     },
     {
       "id": 6,
       "title": "Pride and Prejudice",
-      "authorId": 6,
       "author": "Jane Austen",
       "category": "Romance",
       "image": "https://images.penguinrandomhouse.com/cover/9780143105428",
@@ -78,7 +72,7 @@
       "id": 4,
       "name": "J.R.R. Tolkien",
       "description": "J.R.R. Tolkien was an English writer and academic, best known for his epic high fantasy novels 'The Hobbit' and 'The Lord of the Rings'. He created detailed, imaginative worlds with complex mythologies and languages, and his works have had a profound impact on the fantasy genre.",
-      "image": "https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg"
+      "image":"https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg"
     },
     {
       "id": 5,
@@ -92,16 +86,15 @@
       "description": "Jane Austen was an English novelist known for her witty, insightful portrayals of social life in Regency-era England. Her novels, including 'Pride and Prejudice' and 'Sense and Sensibility', often centered around the themes of marriage, money, and social class. Austen's writing was characterized by her sharp social commentary and keen observation of human behavior, and she is considered one of the most important and influential writers in English literature.",
       "image": "https://cdn.britannica.com/12/172012-050-A9AFF8AF/Jane-Austen-Cassandra-engraving-portrait-1810.jpg"
     }
-  ],
+    ],
   "reviews": [
     {
       "id": 1,
       "bookId": 1,
       "rating": 5,
-      "comment": "This is a classical. A must-read for everyone!",
+      "comment": "This is a classic. A must-read for everyone!",
       "image": "https://randomuser.me/api/portraits/women/1.jpg",
-      "reviewer": "John Doe",
-      "userId": 1
+      "reviewer": "John Doe"
     },
     {
       "id": 2,
@@ -150,20 +143,6 @@
       "comment": "A delightful romance with charming characters.",
       "image": "https://randomuser.me/api/portraits/women/2.jpg",
       "reviewer": "Sarah Johnson"
-    }
-  ],
-  "category": [
-    {
-      "genre": "fiction"
-    },
-    {
-      "genre": "fantasy"
-    },
-    {
-      "genre": "science fiction"
-    },
-    {
-      "genre": "romance"
     }
   ]
 }

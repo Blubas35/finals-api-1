@@ -1,0 +1,42 @@
+.page-content-wrapper {
+    display: flex;
+    column-gap: 50px;
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        flex-wrap: wrap;
+    }
+    @media only screen and (min-width: 481px) and (max-width: 950px) {
+        flex-wrap: wrap;
+    }
+}
+
+.selling-point-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.selling-point-left {
+    width: 100%;
+
+}
+
+.selling-point-right {
+    padding-left: 15px;
+  }
+// .selling-point-right {
+
+// }
+
+.selling-point-description {
+    width: 100%;
+}
+
+.left-container {
+    width: calc((100% - 30px) / 4 * 3);
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        width: 100%;
+    }
+    @media only screen and (min-width: 481px) and (max-width: 950px) {
+        width: 100%;
+    }
+}

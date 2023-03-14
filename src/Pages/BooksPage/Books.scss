@@ -1,0 +1,22 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .genre-wrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 15px;
+    & select {
+        width: 50%;
+        cursor: pointer;
+    }
+  }
+
+  .input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+    & input {
+        width: 50%;
+    }
+  }

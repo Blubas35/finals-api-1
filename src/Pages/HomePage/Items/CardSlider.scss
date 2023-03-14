@@ -1,0 +1,10 @@
+.card-slide-wrapper {
+    display: flex;
+    column-gap: 50px;
+    flex-wrap: wrap;
+    row-gap: 30px;
+
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        column-gap: 35px;
+    }
+}
