@@ -1,0 +1,19 @@
+// .hero-box-overlay {
+//     position: relative;
+//     height: 100%;
+//     background-color: rgba(0, 0, 0, 0.5);
+// }
+.hero-box-text {
+    position: absolute;
+    width: 35%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: #1b2d95;
+    // border: 1px solid black;
+    box-shadow: 12px 13px 40px -13px rgba(0, 0, 0, 0.52);
+    -webkit-box-shadow: 12px 13px 40px -13px rgba(0, 0, 0, 0.52);
+    -moz-box-shadow: 12px 13px 40px -13px rgba(0, 0, 0, 0.52);
+}

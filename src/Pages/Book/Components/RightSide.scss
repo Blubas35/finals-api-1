@@ -1,0 +1,11 @@
+.book-item-content {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    width: 65%;
+    padding-left: 30px;
+    box-shadow: 12px 13px 40px -21px rgba(0, 0, 0, 0.52);
+    -webkit-box-shadow: 12px 13px 40px -21px rgba(0, 0, 0, 0.52);
+    -moz-box-shadow: 12px 13px 40px -21px rgba(0, 0, 0, 0.52);
+
+}

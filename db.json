@@ -98,9 +98,10 @@
       "id": 1,
       "bookId": 1,
       "rating": 5,
-      "comment": "This is a classic. A must-read for everyone!",
+      "comment": "This is a classical. A must-read for everyone!",
       "image": "https://randomuser.me/api/portraits/women/1.jpg",
-      "reviewer": "John Doe"
+      "reviewer": "John Doe",
+      "userId": 1
     },
     {
       "id": 2,

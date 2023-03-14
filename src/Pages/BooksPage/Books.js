@@ -5,6 +5,7 @@ import BookItem from './BookItem/BookItem'
 import { firstLetterUpperCase } from '../../Components/functions/Function'
 import { Link } from 'react-router-dom'
 import './Book.scss'
+import './Books.scss'
 
 
 const Books = () => {
@@ -71,35 +72,39 @@ const Books = () => {
                     </>
                 ) : (
                     <>
-                        <header>
-                            <form onSubmit={formSubmitHandler}>
-                                <select onChange={optionValue} value={selectedInput}>
-                                    {categories.map((category, index) => (
-                                        <option key={index}>{firstLetterUpperCase(category)}</option>
-                                    ))}
-                                </select>
-                                <input className='button' type='submit' value='Search By Genre' />
-                            </form>
-
-                            <input
-                                type='text'
-                                name='keyword'
-                                onChange={keywordHandler}
-                                value={keyword}
-                                placeholder='Search...'
-                            />
-                            <Link to={'/search/' + keyword}>
-                                <button className='button'>Search by keyword</button>
-                            </Link>
+                        <header className='main-header'>
+                            <div className='form-wrapper'>
+                                <form className='genre-wrapper' onSubmit={formSubmitHandler}>
+                                    <select onChange={optionValue} value={selectedInput}>
+                                        {categories.map((category, index) => (
+                                            <option key={index}>{firstLetterUpperCase(category)}</option>
+                                        ))}
+                                    </select>
+                                    <input className='button' type='submit' value='Search By Genre' />
+                                </form>
+                            </div>
+                            <div className='input-wrapper'>
+                                <input
+                                    type='text'
+                                    name='keyword'
+                                    onChange={keywordHandler}
+                                    value={keyword}
+                                    placeholder='Search...'
+                                />
+                                <Link to={'/search/' + keyword}>
+                                    <button className='button'>Search by keyword</button>
+                                </Link>
+                            </div>
                         </header>
 
                         <h1>Books list</h1>
                         {booksData.length > 0 ? (
                             <div className='books-list'>
-                                {booksData.map((book, index) => (
-                                <BookItem key={index} bookInfo={book} />
-                                ))}
-
+                                <ul className='list-wrapper'>
+                                    {booksData.map((book, index) => (
+                                        <BookItem key={index} bookInfo={book} />
+                                    ))}
+                                </ul>
                             </div>
                         ) : (
                             <h2>No results found...</h2>

@@ -1,21 +1,27 @@
 import { NavLink } from "react-router-dom"
-import Container from "../../Components/container/Container"
+import './MainNavigation.scss'
+import logo from '../../Components/Images/logo.png'
 
 const MainNavigation = () => {
     return (
-        <Container>
-            <ul className='main-navigation'>
-                <li>
-                    <NavLink to='/homePage'>Home page</NavLink>
-                </li>
-                <li>
-                    <NavLink to='/reviews'>Reviews page</NavLink>
-                </li>
-                <li>
-                    <NavLink to='/books'>Books List page</NavLink>
-                </li>
-            </ul>
-        </Container>
+        <div className="navigation-content-wrapper">
+            <div className="navigation-wrapper">
+                <div className="navigation-logo-wrapper">
+                    <img className="navigation-logo" src={logo} alt='page logo'></img>
+                </div>
+                <ul className='main-navigation'>
+                    <li className="main-navigation-item">
+                        <NavLink className='item-link' to='/homePage'>Home page</NavLink>
+                    </li>
+                    <li className="main-navigation-item">
+                        <NavLink className='item-link' to='/reviews'>Reviews page</NavLink>
+                    </li>
+                    <li className="main-navigation-item">
+                        <NavLink className='item-link' to='/books'>Books List page</NavLink>
+                    </li>
+                </ul>
+            </div>
+        </div>
     )
 }
 

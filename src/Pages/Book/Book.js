@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Container from '../../Components/container/Container'
+import LeftSide from './Components/LeftSide'
+import ReviewContainer from './Components/ReviewContainer'
+import ReviewForm from './Components/ReviewForm'
+import RightSide from './Components/RightSide'
+import './Book.scss'
 
 
 const Book = () => {
@@ -110,14 +115,14 @@ const Book = () => {
             .then((response) => response.json())
             .then((json) => {
                 fetch(`http://localhost:3000/reviews?bookId=${id}`)
-                .then(res => res.json())
-                .then(reviewData => {
-                    setBookReviews(reviewData)
-                    setNewReviewName('');
-                    setNewReviewRating('');
-                    setNewReviewBody('');
-                    setEditMode(false)
-                });
+                    .then(res => res.json())
+                    .then(reviewData => {
+                        setBookReviews(reviewData)
+                        setNewReviewName('');
+                        setNewReviewRating('');
+                        setNewReviewBody('');
+                        setEditMode(false)
+                    });
             });
 
     }
@@ -125,82 +130,38 @@ const Book = () => {
     return (
         <Container>
             <div className='book-wrapper'>
-                <div className='left-side'>
-                    <div className='book-image-wrapper'>
-                        <img src={bookImage} width='300' height='300' alt='book cover'></img>
-                    </div>
-                    <div className='button-wrapper'>
-                        <button className='button' >Buy now!</button>
-                        <button className='button' >Sign up to read!</button>
-                    </div>
-                </div>
-                <div className='right-side'>
-                    <ul className='book-content'>
-                        <li className='book-item'>
-                            <div className='book-title-wrapper'>
-                                <h2>Title of the book: {bookTitle}</h2>
-                            </div>
-                            <div className='book-information'>
-                                <span>Book author: </span>
-                                <Link to={'/author/' + bookAuthorId}><span>{bookAuthor}</span></Link>
+                <LeftSide bookImage={bookImage}></LeftSide>
 
-                                <div className='book-description'>
-                                    <h3>About the book:</h3>
-                                    <p>{bookDescription}</p>
-                                </div>
+                <RightSide 
+                bookTitle={bookTitle} 
+                bookAuthorId={bookAuthorId} 
+                bookAuthor={bookAuthor} 
+                bookDescription={bookDescription} 
+                bookCategory={bookCategory}
+                ></RightSide>
 
-                                <p>Genre: {bookCategory}</p>
-                            </div>
-                        </li>
-                    </ul>
-                    {/* visai smagu butu padaryt recommendation (card'us) su book image, title ir author*/}
-                    <h2>Ratings & Reviews</h2>
-                    <form onSubmit={formSubmitHandler}>
-                        <div className='form-control'>
-                            <label htmlFor='fullName'>Full name:</label>
-                            <input onChange={fullNameHandler} value={newReviewName} name='fullName' type='text'></input>
-                        </div>
-                        <div className='form-control'>
-                            <label htmlFor='title'>Rating:</label>
-                            <input onChange={ratingHandler} value={newReviewRating} name='title' type='number' min='1' max='5'></input>
-                        </div>
-                        <div className='form-control'>
-                            <label htmlFor='review-textarea'>Write your review:</label>
-                            <textarea onChange={reviewBodyHandler} value={newReviewBody} name='review-textarea'></textarea>
-                        </div>
-                        {!editMode && (
-                            <input className='button'  type='submit' defaultValue='Post review!'></input>
-                        )}
-                    </form>
-                    {editMode && (
-                        <button className='button'  type='submit' onClick={() => updateReviewHandler(editReviewId)}>Save changes!</button>
-                    )}
-                    {bookReviews && bookReviews.length > 0 && (
-                        bookReviews.map((review, index) => (
-                            <div key={index} className='ratings-reviews-wrapper'>
-                                <div className='user-info'>
-                                    <img src={review.image} alt='user profile photo'></img>
-                                    <h4>{review.reviewer}</h4>
-                                </div>
-                                <div className='review-rating-description'>
-                                    <div className='rating'>
-                                        <span>{review.rating}/5</span>
-                                    </div>
-                                    <div className='review-text'>
-                                        <span>What user <span style={{ fontWeight: "bold" }}>{review.reviewer}</span>  thinks about this book: </span>
-                                        <p>{review.comment}</p>
-                                    </div>
-                                    <div className='button-wrapper'>
-                                        <button className='button'  onClick={() => editHandler(review)}>Edit</button>
-                                        <button className='button'  onClick={() => deleteHandler(review.id)}>Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                        )
+            </div>
+            <div className='review-wrapper'>
+                <h2>Ratings & Reviews</h2>
+                <ReviewForm
+                    onFormSubmit={formSubmitHandler}
+                    onNameChange={fullNameHandler}
+                    nameValue={newReviewName}
+                    onRatingChange={ratingHandler}
+                    ratingValue={newReviewRating}
+                    textareaChange={reviewBodyHandler}
+                    textareaValue={newReviewBody}
+                    editMode={editMode}
+                ></ReviewForm>
 
-                    )}
-                </div>
+                {editMode && (
+                    <button className='button' type='submit' onClick={() => updateReviewHandler(editReviewId)}>Save changes!</button>
+                )}
+                <ReviewContainer
+                    infoArr={bookReviews}
+                    onEdit={editHandler}
+                    onDelete={deleteHandler}
+                ></ReviewContainer>
             </div>
         </Container >
     )

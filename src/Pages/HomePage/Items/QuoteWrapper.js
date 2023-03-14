@@ -1,4 +1,5 @@
 import React from 'react'
+import './QuoteWrapper.scss'
 
 const QuoteWrapper = ({ authorsImage }) => {
     return (

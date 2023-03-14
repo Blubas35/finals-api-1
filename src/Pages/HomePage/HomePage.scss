@@ -1,0 +1,30 @@
+.page-content-wrapper {
+    display: flex;
+    column-gap: 50px;
+}
+
+.selling-point-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.selling-point-left {
+    width: 100%;
+
+}
+
+.selling-point-right {
+    padding-left: 15px;
+  }
+// .selling-point-right {
+
+// }
+
+.selling-point-description {
+    width: 100%;
+}
+
+.left-container {
+    width: calc((100% - 30px) / 4 * 3);
+}

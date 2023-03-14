@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './BookItem.scss'
 
 const BookItem = (props) => {
     const { title, author, authorId, id, category, image} = props.bookInfo
     return (
-            <ul className='list-wrapper'>
-                <li>
+                <li className='book-item'>
                     <div className='book-left-side'>
                         <div className='book-cover-wrapper'>
                             <img src={image} alt='book cover' width='100'></img>
@@ -32,7 +32,6 @@ const BookItem = (props) => {
                         </div>
                     </div>
                 </li>
-            </ul>
     )
 }
 

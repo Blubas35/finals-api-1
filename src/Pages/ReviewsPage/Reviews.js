@@ -8,8 +8,6 @@ const Reviews = () => {
 
     useEffect(() => {
         fetch('http://localhost:3000/reviews?_expand=book')
-        // fetch('http://localhost:3000/reviews/')
-        // http://localhost:3000/reviews?bookId=1
             .then(res => res.json())
             .then(data => {
                 setReviewsData(data)
@@ -33,7 +31,6 @@ const Reviews = () => {
                             </li>
                         </ul>
                     </div>
-
                 )
 
                 )

@@ -1,0 +1,40 @@
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.ratings-reviews-wrapper {
+    display: flex;
+    column-gap: 30px;
+}
+
+.review-rating-description {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.user-info {
+    display: flex;
+}
+
+.user-profile-photo {
+    align-self: center;
+    border-radius: 50%;
+}
+
+.button-wrapper {
+    display: flex;
+    column-gap: 15px;
+
+    & .button {
+        width: 80px;
+        border: 1px solid;
+        &:hover {
+            background-color: white;
+            color: #4CAF50;
+            border: 1px solid;
+        }
+    }
+}
