@@ -10,18 +10,18 @@ const MainNavigation = () => {
                     <img className="navigation-logo" src={logo} alt='page logo'></img>
                 </div>
                 <ul className='main-navigation'>
-                    <li className="main-navigation-item">
-                        <NavLink className='item-link' to='/homePage'>Home page</NavLink>
-                    </li>
-                    <li className="main-navigation-item">
-                        <NavLink className='item-link' to='/reviews'>Reviews page</NavLink>
-                    </li>
-                    <li className="main-navigation-item">
-                        <NavLink className='item-link' to='/books'>Books List page</NavLink>
-                    </li>
+                    <NavLink className='item-link' to='/homePage'> <li className="main-navigation-item">
+                        Home page
+                    </li> </NavLink>
+                    <NavLink className='item-link' to='/reviews'> <li className="main-navigation-item">
+                        Reviews page
+                    </li></NavLink>
+                    <NavLink className='item-link' to='/books'> <li className="main-navigation-item">
+                        Books List page
+                    </li> </NavLink>
                 </ul>
             </div>
-        </div>
+        </div >
     )
 }
 
