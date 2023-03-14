@@ -24,6 +24,7 @@ const Book = () => {
     const [newReviewBody, setNewReviewBody] = useState('')
     const [editReviewId, setEditReviewId] = useState('')
     const [editMode, setEditMode] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         fetch(`http://localhost:3000/books/${id}`)
@@ -35,6 +36,7 @@ const Book = () => {
                 setBookImage(data.image)
                 setBookDescription(data.description)
                 setBookAuthorId(data.authorId)
+                setIsLoading(false)
             })
     }, [id])
     useEffect(() => {
@@ -42,6 +44,7 @@ const Book = () => {
             .then(res => res.json())
             .then(data => {
                 setBookReviews(data)
+                setIsLoading(false)
             })
     }, [id])
 
@@ -129,40 +132,47 @@ const Book = () => {
 
     return (
         <Container>
-            <div className='book-wrapper'>
-                <LeftSide bookImage={bookImage}></LeftSide>
+            {isLoading ? (
+                <div>Loading...</div>
+            ) : (
+                <>
+                    <div className='book-wrapper'>
+                        <LeftSide bookImage={bookImage}></LeftSide>
 
-                <RightSide 
-                bookTitle={bookTitle} 
-                bookAuthorId={bookAuthorId} 
-                bookAuthor={bookAuthor} 
-                bookDescription={bookDescription} 
-                bookCategory={bookCategory}
-                ></RightSide>
+                        <RightSide
+                            bookTitle={bookTitle}
+                            bookAuthorId={bookAuthorId}
+                            bookAuthor={bookAuthor}
+                            bookDescription={bookDescription}
+                            bookCategory={bookCategory}
+                        ></RightSide>
 
-            </div>
-            <div className='review-wrapper'>
-                <h2>Ratings & Reviews</h2>
-                <ReviewForm
-                    onFormSubmit={formSubmitHandler}
-                    onNameChange={fullNameHandler}
-                    nameValue={newReviewName}
-                    onRatingChange={ratingHandler}
-                    ratingValue={newReviewRating}
-                    textareaChange={reviewBodyHandler}
-                    textareaValue={newReviewBody}
-                    editMode={editMode}
-                ></ReviewForm>
+                    </div>
+                    <div className='review-wrapper'>
+                        <h2>Ratings & Reviews</h2>
+                        <ReviewForm
+                            onFormSubmit={formSubmitHandler}
+                            onNameChange={fullNameHandler}
+                            nameValue={newReviewName}
+                            onRatingChange={ratingHandler}
+                            ratingValue={newReviewRating}
+                            textareaChange={reviewBodyHandler}
+                            textareaValue={newReviewBody}
+                            editMode={editMode}
+                        ></ReviewForm>
 
-                {editMode && (
-                    <button className='button' type='submit' onClick={() => updateReviewHandler(editReviewId)}>Save changes!</button>
-                )}
-                <ReviewContainer
-                    infoArr={bookReviews}
-                    onEdit={editHandler}
-                    onDelete={deleteHandler}
-                ></ReviewContainer>
-            </div>
+                        {editMode && (
+                            <button className='button' type='submit' onClick={() => updateReviewHandler(editReviewId)}>Save changes!</button>
+                        )}
+                        <ReviewContainer
+                            infoArr={bookReviews}
+                            onEdit={editHandler}
+                            onDelete={deleteHandler}
+                        ></ReviewContainer>
+                    </div>
+                </>
+            )}
+
         </Container >
     )
 }
