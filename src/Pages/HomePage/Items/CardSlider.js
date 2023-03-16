@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './CardSlider.scss'
 
 const CardSlider = ({ booksData }) => {
+    console.log(booksData)
     return (
         <>
             <h3>What will you discover?</h3>

@@ -58,7 +58,7 @@
   "authors": [
     {
       "id": 1,
-      "name": "Harper",
+      "name": "Harper Lee",
       "description": "Harper Lee was an American author best known for her Pulitzer Prize-winning novel, 'To Kill a Mockingbird'. Born in Alabama in 1926, Lee studied law at the University of Alabama before moving to New York City to pursue a writing career. 'To Kill a Mockingbird' was published in 1960 and became an instant classic, exploring issues of race, justice, and morality through the eyes of a young girl named Scout. Despite the success of her first novel, Lee lived a relatively private life and did not publish another book until the controversial release of 'Go Set a Watchman' in 2015. Lee died in 2016 at the age of 89.",
       "image": "https://i.guim.co.uk/img/media/b951fa329f11d1cf46eb348dd34c909f06cdd704/367_29_2633_1580/master/2633.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=43d54dab0092767d865be83baf235161"
     },
@@ -149,15 +149,7 @@
       "rating": 4,
       "comment": "A delightful romance with charming characters.",
       "image": "https://randomuser.me/api/portraits/women/2.jpg",
-      "reviewer": "Sarah Johnson",
-      "userId": 7
-    },
-    {
-      "bookId": "1",
-      "reviewer": "asdas",
-      "rating": 1,
-      "comment": "asdasd",
-      "id": 8
+      "reviewer": "Sarah Johnson"
     }
   ],
   "category": [
