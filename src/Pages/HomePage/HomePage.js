@@ -16,7 +16,7 @@ const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:3000/books/')
+        fetch('https://localhost:3000/books/')
             .then(res => res.json())
             .then(data => {
                 setBooksData(data)

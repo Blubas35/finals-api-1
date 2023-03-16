@@ -2,7 +2,6 @@ import React from 'react'
 import './RightContainer.scss'
 
 const RightContainer = ({ data }) => {
-    console.log(data)
     return (
         <div className='right-container'>
             <h3 className='right-container-title'>User reviews</h3>
