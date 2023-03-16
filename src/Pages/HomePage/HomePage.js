@@ -16,35 +16,48 @@ const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:3000/books/')
+        fetch('https://blubas35.github.io/finals-api-1/db.json')
             .then(res => res.json())
             .then(data => {
-                setBooksData(data)
+                console.log(data.authors[1].image)
+                setAuthorsImage(data.authors[1].image)
+                setBooksData(data.books)
+                setAuthorsData(data.authors)
+                setReviewsData(data.reviews)
                 setIsLoading(false)
             })
 
     }, [])
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/books/')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setBooksData(data)
+    //             setIsLoading(false)
+    //         })
 
-    useEffect(() => {
-        fetch('http://localhost:3000/authors/')
-            .then(res => res.json())
-            .then(data => {
-                setAuthorsData(data)
-                setAuthorsImage(data.map(author => author.image))
-                setIsLoading(false)
-            })
+    // }, [])
 
-    }, [])
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/authors/')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setAuthorsData(data)
+    //             setAuthorsImage(data.map(author => author.image))
+    //             setIsLoading(false)
+    //         })
 
-    useEffect(() => {
-        fetch('http://localhost:3000/reviews?_limit=3')
-            .then(res => res.json())
-            .then(data => {
-                setReviewsData(data)
-                setIsLoading(false)
-            })
-    }, [])
+    // }, [])
 
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/reviews?_limit=3')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setReviewsData(data)
+    //             setIsLoading(false)
+    //         })
+    // }, [])
+    console.log(booksData)
     return (
         <>
             <HeroBox image={backgroundImage}></HeroBox>
@@ -65,7 +78,7 @@ const HomePage = () => {
                                 </div>
                             </div>
                             <CardSlider booksData={booksData}></CardSlider>
-                            <QuoteWrapper authorsImage={authorsImage[1]}></QuoteWrapper>
+                            <QuoteWrapper authorsImage={authorsImage}></QuoteWrapper>
                         </div>
                         <RightContainer data={reviewsData}></RightContainer>
                     </div>
