@@ -1,7 +1,7 @@
 import React from 'react'
 import './ReviewForm.scss'
 
-const ReviewForm = ( { onFormSubmit, onNameChange, nameValue, onRatingChange, ratingValue, textareaChange, textareaValue, editMode} ) => {
+const ReviewForm = ({ onFormSubmit, onNameChange, nameValue, onRatingChange, ratingValue, textareaChange, textareaValue, editMode, updateReview, reviewId, }) => {
     return (
         <form className='review-form' onSubmit={onFormSubmit}>
             <div className='form-control'>
@@ -18,6 +18,9 @@ const ReviewForm = ( { onFormSubmit, onNameChange, nameValue, onRatingChange, ra
             </div>
             {!editMode && (
                 <input className='form-button' type='submit' value='Post review!'></input>
+            )}
+            {editMode && (
+                <button className='save-changes button' type='submit' onClick={() => updateReview(reviewId)}>Save changes!</button>
             )}
         </form>
     )

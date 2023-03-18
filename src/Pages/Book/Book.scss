@@ -4,6 +4,16 @@
   row-gap: 30px;
 }
 
+.review-form-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.save-changes.button {
+  align-self: center;
+}
+
 .book-wrapper {
   display: flex;
   column-gap: 30px;

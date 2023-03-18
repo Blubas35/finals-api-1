@@ -1,22 +1,31 @@
 .main-header {
-    display: flex;
-    justify-content: space-between;
-  }
-  .genre-wrapper {
-    display: flex;
-    justify-content: space-between;
-    column-gap: 15px;
-    & select {
-        width: 50%;
-        cursor: pointer;
-    }
-  }
+  display: flex;
+  justify-content: space-between;
+}
 
-  .input-wrapper {
-    display: flex;
-    justify-content: space-between;
-    column-gap: 10px;
-    & input {
-        width: 50%;
-    }
+.genre-wrapper {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 15px;
+
+  & select {
+    width: 50%;
+    cursor: pointer;
   }
+}
+
+.genre-result-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+
+  & input {
+    width: 50%;
+  }
+}

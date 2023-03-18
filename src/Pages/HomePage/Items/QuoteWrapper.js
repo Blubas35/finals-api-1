@@ -8,7 +8,7 @@ const QuoteWrapper = ({ authorsImage }) => {
             <div className='quote-content-wrapper'>
 
                 <div className='quote-author-image'>
-                    <img className='quote-author-image' src={authorsImage} alt='authors portrait' width='150'></img>
+                    <img className='quote-author-image' src={authorsImage[1]} alt='authors portrait' width='150'></img>
                 </div>
                 <div className='quote-text'>
                     <p>"I am not afraid of storms, for I am learning how to sail my ship."</p>

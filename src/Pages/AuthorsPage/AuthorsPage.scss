@@ -1,0 +1,36 @@
+.author-personal-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.author-information-wrapper {
+    display: flex;
+    column-gap: 30px;
+}
+
+// .author-image {
+//     border-radius: 50%;
+// }
+
+.author-biography {
+    display: flex;
+    flex-direction: column;
+
+    & .button {
+        align-self: flex-start;
+        width: 20%;
+        border: 1px solid;
+
+        &:hover {
+            background-color: white;
+            color: #4CAF50;
+            border: 1px solid;
+        }
+    }
+}
+
+.biography-content {
+    width: 75%;
+    font-family: "Inter";
+}

@@ -20,7 +20,7 @@ const Reviews = () => {
     return (
         <Container>
             {isLoading ? (
-                <div>Loading...</div>
+                <div className='loading'>Loading...</div>
             ) : (
                 <>
                     <h1>Reviews list</h1>

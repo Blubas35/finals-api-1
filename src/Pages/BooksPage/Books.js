@@ -59,16 +59,19 @@ const Books = () => {
     return (
         <Container>
             {isLoading ? (
-                <div>Loading...</div>
+                <div className='loading'>Loading...</div>
             ) : (
                 searchResults ? (
                     <>
-                        <h2>Book list with selected category ({selectedInput})</h2>
-                        <button className='button' onClick={returnListHandler}>Return to the full list</button>
-
-                        {searchResults.map((book, index) => (
-                            <BookItem key={index} bookInfo={book} />
-                        ))}
+                        <div className='genre-search-wrapper'>
+                            <h2 className='genre-result-title'>Book list with selected category ({selectedInput})</h2>
+                            <button className='button' onClick={returnListHandler}>Return to the full list</button>
+                            <ul className='genre-result-list'>
+                                {searchResults.map((book, index) => (
+                                    <BookItem key={index} bookInfo={book} />
+                                ))}
+                            </ul>
+                        </div>
                     </>
                 ) : (
                     <>

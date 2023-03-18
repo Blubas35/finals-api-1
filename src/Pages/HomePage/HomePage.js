@@ -15,55 +15,54 @@ const HomePage = () => {
     const [reviewsData, setReviewsData] = useState('')
     const [isLoading, setIsLoading] = useState(true)
 
+    // useEffect(() => {
+    //     fetch('https://blubas35.github.io/finals-api-1/db.json')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data.authors[1].image)
+    //             setAuthorsImage(data.authors[1].image)
+    //             setBooksData(data.books)
+    //             setAuthorsData(data.authors)
+    //             setReviewsData(data.reviews)
+    //             setIsLoading(false)
+    //         })
+
+    // }, [])
     useEffect(() => {
-        fetch('https://blubas35.github.io/finals-api-1/db.json')
+        fetch('http://localhost:3000/books/')
             .then(res => res.json())
             .then(data => {
-                console.log(data.authors[1].image)
-                setAuthorsImage(data.authors[1].image)
-                setBooksData(data.books)
-                setAuthorsData(data.authors)
-                setReviewsData(data.reviews)
+                setBooksData(data)
                 setIsLoading(false)
             })
 
     }, [])
-    // useEffect(() => {
-    //     fetch('http://localhost:3000/books/')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setBooksData(data)
-    //             setIsLoading(false)
-    //         })
 
-    // }, [])
+    useEffect(() => {
+        fetch('http://localhost:3000/authors/')
+            .then(res => res.json())
+            .then(data => {
+                setAuthorsData(data)
+                setAuthorsImage(data.map(author => author.image))
+                setIsLoading(false)
+            })
 
-    // useEffect(() => {
-    //     fetch('http://localhost:3000/authors/')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setAuthorsData(data)
-    //             setAuthorsImage(data.map(author => author.image))
-    //             setIsLoading(false)
-    //         })
+    }, [])
 
-    // }, [])
-
-    // useEffect(() => {
-    //     fetch('http://localhost:3000/reviews?_limit=3')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setReviewsData(data)
-    //             setIsLoading(false)
-    //         })
-    // }, [])
-    console.log(booksData)
+    useEffect(() => {
+        fetch('http://localhost:3000/reviews?_limit=3')
+            .then(res => res.json())
+            .then(data => {
+                setReviewsData(data)
+                setIsLoading(false)
+            })
+    }, [])
     return (
         <>
             <HeroBox image={backgroundImage}></HeroBox>
             <Container>
                 {isLoading ? (
-                    <div>Loading...</div>
+                    <div className='loading'>Loading...</div>
                 ) : (
                     <div className='page-content-wrapper'>
                         <div className='left-container'>

@@ -54,25 +54,31 @@ const Book = () => {
 
     const formSubmitHandler = (e) => {
         e.preventDefault()
-        const newReview = {
-            bookId: id,
-            reviewer: newReviewName,
-            rating: newReviewRating,
-            comment: newReviewBody,
+
+        if (editMode) {
+            updateReviewHandler(editReviewId)
+        } else {
+            const newReview = {
+                bookId: id,
+                reviewer: newReviewName,
+                rating: newReviewRating,
+                comment: newReviewBody,
+            }
+
+            fetch(`http://localhost:3000/reviews?bookId=${id}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newReview),
+            })
+                .then(response => response.json())
+                .then(({ id }) => {
+                    setBookReviews([...bookReviews, { id, ...newReview }]);
+                    setNewReviewName('');
+                    setNewReviewRating(1);
+                    setNewReviewBody('');
+                })
         }
 
-        fetch(`http://localhost:3000/reviews?bookId=${id}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newReview),
-        })
-            .then(response => response.json())
-            .then(({ id }) => {
-                setBookReviews([...bookReviews, { id, ...newReview }]);
-                setNewReviewName('');
-                setNewReviewRating('');
-                setNewReviewBody('');
-            })
     }
 
     const deleteHandler = (reviewId) => {
@@ -122,7 +128,7 @@ const Book = () => {
                     .then(reviewData => {
                         setBookReviews(reviewData)
                         setNewReviewName('');
-                        setNewReviewRating('');
+                        setNewReviewRating(1);
                         setNewReviewBody('');
                         setEditMode(false)
                     });
@@ -133,7 +139,7 @@ const Book = () => {
     return (
         <Container>
             {isLoading ? (
-                <div>Loading...</div>
+                <div className='loading'>Loading...</div>
             ) : (
                 <>
                     <div className='book-wrapper'>
@@ -150,20 +156,21 @@ const Book = () => {
                     </div>
                     <div className='review-wrapper'>
                         <h2>Ratings & Reviews</h2>
-                        <ReviewForm
-                            onFormSubmit={formSubmitHandler}
-                            onNameChange={fullNameHandler}
-                            nameValue={newReviewName}
-                            onRatingChange={ratingHandler}
-                            ratingValue={newReviewRating}
-                            textareaChange={reviewBodyHandler}
-                            textareaValue={newReviewBody}
-                            editMode={editMode}
-                        ></ReviewForm>
+                        <div className='review-form-button-wrapper'>
+                            <ReviewForm
+                                onFormSubmit={formSubmitHandler}
+                                onNameChange={fullNameHandler}
+                                nameValue={newReviewName}
+                                onRatingChange={ratingHandler}
+                                ratingValue={newReviewRating}
+                                textareaChange={reviewBodyHandler}
+                                textareaValue={newReviewBody}
+                                editMode={editMode}
+                                updateReview={updateReviewHandler}
+                                reviewId={editReviewId}
+                            ></ReviewForm>
 
-                        {editMode && (
-                            <button className='button' type='submit' onClick={() => updateReviewHandler(editReviewId)}>Save changes!</button>
-                        )}
+                        </div>
                         <ReviewContainer
                             infoArr={bookReviews}
                             onEdit={editHandler}

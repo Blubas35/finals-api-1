@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Container from '../../Components/container/Container'
+import './AuthorsPage.scss'
+import BookCard from './Components/BookCard'
 
 const AuthorsPage = () => {
 
@@ -73,16 +75,16 @@ const AuthorsPage = () => {
         <Container>
             <div className='author-information-wrapper'>
                 <div className='author-personal-info-wrapper'>
-                    <h2 className='author-name'>{authorInformation.name}</h2>
+                    {/* <h2 className='author-name'>{authorInformation.name}</h2> */}
                     <div className='author-image-wrapper'>
                         <img className='author-image' src={authorInformation.image} alt='author portrait' width='200' height='200'></img>
                     </div>
                 </div>
                 <div className='author-biography'>
-                    <h2 className='biography-title'>About the author</h2>
+                    <h2 className='biography-title'>About {authorInformation.name}</h2>
                     <p className='biography-content'>{authorInformation.description}</p>
+                    <button className='button' onClick={() => editAuthorHandler(authorInformation)}>Edit author</button>
                 </div>
-                <button className='button' onClick={() => editAuthorHandler(authorInformation)}>Edit author</button>
 
                 {editMode && (
                     <form onSubmit={submitFormHandler}>
@@ -101,68 +103,69 @@ const AuthorsPage = () => {
                         <input className='button' type='submit' value='Save changes!'></input>
                     </form>
                 )}
-                {bookInformation && bookInformation.length > 0 && (
-                    bookInformation.map((info, index) => {
-                        return (
-                            <section key={index} className='recommended-book-list'>
-                                <h3>If you are interested in {authorInformation.name} writing style. Check out these books:</h3>
-                                <div className='recommended-book-card'>
-                                    <div className='card-left-side'>
-                                        <h4>
-                                            <span>
-                                                <Link
-                                                    to={'/book/' + info.id}
-                                                >
-                                                    {info.title}
-                                                </Link>
-                                            </span>
-                                        </h4>
-                                        <img className='card-image' src={info.image} alt='book cover' width='100'></img>
-                                        <div className='card-right-side'>
-                                            <p>{info.description}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='recommended-book-card'>
-                                    <div className='card-left-side'>
-                                        <h4>
-                                            <span>
-                                                <Link
-                                                    to={'/book/' + info.id}
-                                                >
-                                                    {info.title}
-                                                </Link>
-                                            </span>
-                                        </h4>
-                                        <img className='card-image' src={info.image} alt='book cover' width='100'></img>
-                                        <div className='card-right-side'>
-                                            <p>{info.description}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='recommended-book-card'>
-                                    <div className='card-left-side'>
-                                        <h4>
-                                            <span>
-                                                <Link
-                                                    to={'/book/' + info.id}
-                                                >
-                                                    {info.title}
-                                                </Link>
-                                            </span>
-                                        </h4>
-                                        <img className='card-image' src={info.image} alt='book cover' width='100'></img>
-                                        <div className='card-right-side'>
-                                            <p>{info.description}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        )
-                    })
-
-                )}
             </div>
+            {bookInformation && bookInformation.length > 0 && (
+                bookInformation.map((info, index) => {
+                    return (
+                        // <section key={index} className='recommended-book-list'>
+                        //     <h3>If you are interested in {authorInformation.name} writing style. Check out these books:</h3>
+                        //     <div className='recommended-book-card'>
+                        //         <div className='card-left-side'>
+                        //             <h4>
+                        //                 <span>
+                        //                     <Link
+                        //                         to={'/book/' + info.id}
+                        //                     >
+                        //                         {info.title}
+                        //                     </Link>
+                        //                 </span>
+                        //             </h4>
+                        //             <img className='card-image' src={info.image} alt='book cover' width='100'></img>
+                        //             <div className='card-right-side'>
+                        //                 <p>{info.description}</p>
+                        //             </div>
+                        //         </div>
+                        //     </div>
+                        //     <div className='recommended-book-card'>
+                        //         <div className='card-left-side'>
+                        //             <h4>
+                        //                 <span>
+                        //                     <Link
+                        //                         to={'/book/' + info.id}
+                        //                     >
+                        //                         {info.title}
+                        //                     </Link>
+                        //                 </span>
+                        //             </h4>
+                        //             <img className='card-image' src={info.image} alt='book cover' width='100'></img>
+                        //             <div className='card-right-side'>
+                        //                 <p>{info.description}</p>
+                        //             </div>
+                        //         </div>
+                        //     </div>
+                        //     <div className='recommended-book-card'>
+                        //         <div className='card-left-side'>
+                        //             <h4>
+                        //                 <span>
+                        //                     <Link
+                        //                         to={'/book/' + info.id}
+                        //                     >
+                        //                         {info.title}
+                        //                     </Link>
+                        //                 </span>
+                        //             </h4>
+                        //             <img className='card-image' src={info.image} alt='book cover' width='100'></img>
+                        //             <div className='card-right-side'>
+                        //                 <p>{info.description}</p>
+                        //             </div>
+                        //         </div>
+                        //     </div>
+                        // </section>
+                        <BookCard key={index} data={info} authorInformation={authorInformation}></BookCard>
+                    )
+                })
+
+            )}
 
         </Container>
     )
