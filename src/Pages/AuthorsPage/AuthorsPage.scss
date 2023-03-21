@@ -19,13 +19,6 @@
 
     & .button {
         align-self: flex-start;
-        border: 1px solid;
-
-        &:hover {
-            background-color: white;
-            color: #4CAF50;
-            border: 1px solid;
-        }
     }
 }
 
@@ -33,3 +26,19 @@
     width: 75%;
     font-family: "Inter";
 }
+
+.edit-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 15px;
+  }
+  
+  .button {
+    justify-self: flex-start;
+  }
+  
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1;
+  }

@@ -75,7 +75,7 @@ span {
 }
 
 .button {
-  background-color: #4CAF50;
+  background-color: #1b2d95;
   border: none;
   color: white;
   padding: 10px 10px;
@@ -85,6 +85,10 @@ span {
   font-size: 16px;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.button:hover {
+  opacity: 75%;
 }
 
 // .button {
@@ -102,12 +106,13 @@ span {
 input[type=text],
 select,
 textarea {
-  width: 10%;
+  width: 75%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
+
 }
 
 /* Style the label to display next to the inputs */
@@ -119,7 +124,7 @@ label {
 /* Style the submit button */
 input[type=submit] {
 
-  background-color: #4CAF50;
+  background-color: #1b2d95;
   border: none;
   color: white;
   padding: 10px 10px;
@@ -129,7 +134,16 @@ input[type=submit] {
   font-size: 16px;
   border-radius: 10px;
   cursor: pointer;
+
+
+  grid-column: 1;
+  justify-self: flex-start;
 }
+
+input[type=submit]:hover {
+  opacity: 75%;
+}
+
 
 /* Style the container */
 .container {

@@ -1,0 +1,10 @@
+.star {
+    cursor: pointer;
+    font-size: 2rem;
+    color: gray;
+    transition: color 0.2s;
+}
+
+.star.selected {
+    color: gold;
+}

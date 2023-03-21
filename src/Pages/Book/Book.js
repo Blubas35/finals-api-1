@@ -20,11 +20,11 @@ const Book = () => {
     const [bookDescription, setBookDescription] = useState('')
     const [bookReviews, setBookReviews] = useState([])
     const [newReviewName, setNewReviewName] = useState('')
-    const [newReviewRating, setNewReviewRating] = useState(1)
     const [newReviewBody, setNewReviewBody] = useState('')
     const [editReviewId, setEditReviewId] = useState('')
     const [editMode, setEditMode] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
+    const [rating, setRating] = useState(0);
 
     useEffect(() => {
         fetch(`http://localhost:3000/books/${id}`)
@@ -49,7 +49,6 @@ const Book = () => {
     }, [id])
 
     const fullNameHandler = (e) => setNewReviewName(e.target.value)
-    const ratingHandler = (e) => setNewReviewRating(e.target.value)
     const reviewBodyHandler = (e) => setNewReviewBody(e.target.value)
 
     const formSubmitHandler = (e) => {
@@ -61,7 +60,7 @@ const Book = () => {
             const newReview = {
                 bookId: id,
                 reviewer: newReviewName,
-                rating: newReviewRating,
+                rating: rating,
                 comment: newReviewBody,
             }
 
@@ -74,7 +73,7 @@ const Book = () => {
                 .then(({ id }) => {
                     setBookReviews([...bookReviews, { id, ...newReview }]);
                     setNewReviewName('');
-                    setNewReviewRating(1);
+                    setRating(0)
                     setNewReviewBody('');
                 })
         }
@@ -100,8 +99,8 @@ const Book = () => {
         console.log(reviewData)
 
         setNewReviewName(reviewData.reviewer)
-        setNewReviewRating(reviewData.rating)
         setNewReviewBody(reviewData.comment)
+        setRating(reviewData.rating)
         setEditReviewId(reviewData.id)
         setEditMode(true)
     }
@@ -113,7 +112,7 @@ const Book = () => {
             body: JSON.stringify({
                 id: 1,
                 reviewer: newReviewName,
-                rating: newReviewRating,
+                rating: rating,
                 comment: newReviewBody,
                 userId: reviewId,
             }),
@@ -128,7 +127,7 @@ const Book = () => {
                     .then(reviewData => {
                         setBookReviews(reviewData)
                         setNewReviewName('');
-                        setNewReviewRating(1);
+                        setRating(0)
                         setNewReviewBody('');
                         setEditMode(false)
                     });
@@ -161,13 +160,13 @@ const Book = () => {
                                 onFormSubmit={formSubmitHandler}
                                 onNameChange={fullNameHandler}
                                 nameValue={newReviewName}
-                                onRatingChange={ratingHandler}
-                                ratingValue={newReviewRating}
                                 textareaChange={reviewBodyHandler}
                                 textareaValue={newReviewBody}
                                 editMode={editMode}
                                 updateReview={updateReviewHandler}
                                 reviewId={editReviewId}
+                                rating={rating}
+                                setRating={setRating}
                             ></ReviewForm>
 
                         </div>

@@ -125,7 +125,8 @@
       "rating": 4,
       "comment": "A beautifully written story with memorable characters.",
       "image": "https://randomuser.me/api/portraits/men/2.jpg",
-      "reviewer": "Alice Brown"
+      "reviewer": "Alice Brown",
+      "userId": 4
     },
     {
       "id": 5,
