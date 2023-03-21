@@ -73,99 +73,100 @@ const AuthorsPage = () => {
     };
     return (
         <Container>
-            <div className='author-information-wrapper'>
-                <div className='author-personal-info-wrapper'>
-                    {/* <h2 className='author-name'>{authorInformation.name}</h2> */}
-                    <div className='author-image-wrapper'>
-                        <img className='author-image' src={authorInformation.image} alt='author portrait' width='200' height='200'></img>
+            <div className='author-pages-wrapper'>
+                <div className='author-information-wrapper'>
+                    <div className='author-personal-info-wrapper'>
+                        {/* <h2 className='author-name'>{authorInformation.name}</h2> */}
+                        <div className='author-image-wrapper'>
+                            <img className='author-image' src={authorInformation.image} alt='author portrait' width='200' height='200'></img>
+                        </div>
                     </div>
-                </div>
-                <div className='author-biography'>
-                    <h2 className='biography-title'>About {authorInformation.name}</h2>
-                    <p className='biography-content'>{authorInformation.description}</p>
-                    <button className='button' onClick={() => editAuthorHandler(authorInformation)}>Edit author</button>
-                </div>
+                    <div className='author-biography'>
+                        <h2 className='biography-title'>About {authorInformation.name}</h2>
+                        <p className='biography-content'>{authorInformation.description}</p>
+                        <button className='button' onClick={() => editAuthorHandler(authorInformation)}>Edit author</button>
+                    </div>
 
-                {editMode && (
-                    <form onSubmit={submitFormHandler}>
-                        <div className='form-control'>
-                            <label htmlFor='fullName'>Authors full name: </label>
-                            <input name='fullName' type='text' value={authorName} onChange={fullNameHandler}></input>
-                        </div>
-                        <div className='form-control'>
-                            <label htmlFor='author-image'>Authors image url:  </label>
-                            <input name='author-image' type='text' value={authorImage} onChange={imageUrlHandler}></input>
-                        </div>
-                        <div className='form-control'>
-                            <label htmlFor='author-description'>Authors description: </label>
-                            <textarea name='author-description' type='text' value={authorDescription} onChange={authorDescriptionHandler} rows="10" cols="75"></textarea>
-                        </div>
-                        <input className='button' type='submit' value='Save changes!'></input>
-                    </form>
+                    {editMode && (
+                        <form onSubmit={submitFormHandler}>
+                            <div className='form-control'>
+                                <label htmlFor='fullName'>Authors full name: </label>
+                                <input name='fullName' type='text' value={authorName} onChange={fullNameHandler}></input>
+                            </div>
+                            <div className='form-control'>
+                                <label htmlFor='author-image'>Authors image url:  </label>
+                                <input name='author-image' type='text' value={authorImage} onChange={imageUrlHandler}></input>
+                            </div>
+                            <div className='form-control'>
+                                <label htmlFor='author-description'>Authors description: </label>
+                                <textarea name='author-description' type='text' value={authorDescription} onChange={authorDescriptionHandler} rows="10" cols="75"></textarea>
+                            </div>
+                            <input className='button' type='submit' value='Save changes!'></input>
+                        </form>
+                    )}
+                </div>
+                {bookInformation && bookInformation.length > 0 && (
+                    bookInformation.map((info, index) => {
+                        return (
+                            // <section key={index} className='recommended-book-list'>
+                            //     <h3>If you are interested in {authorInformation.name} writing style. Check out these books:</h3>
+                            //     <div className='recommended-book-card'>
+                            //         <div className='card-left-side'>
+                            //             <h4>
+                            //                 <span>
+                            //                     <Link
+                            //                         to={'/book/' + info.id}
+                            //                     >
+                            //                         {info.title}
+                            //                     </Link>
+                            //                 </span>
+                            //             </h4>
+                            //             <img className='card-image' src={info.image} alt='book cover' width='100'></img>
+                            //             <div className='card-right-side'>
+                            //                 <p>{info.description}</p>
+                            //             </div>
+                            //         </div>
+                            //     </div>
+                            //     <div className='recommended-book-card'>
+                            //         <div className='card-left-side'>
+                            //             <h4>
+                            //                 <span>
+                            //                     <Link
+                            //                         to={'/book/' + info.id}
+                            //                     >
+                            //                         {info.title}
+                            //                     </Link>
+                            //                 </span>
+                            //             </h4>
+                            //             <img className='card-image' src={info.image} alt='book cover' width='100'></img>
+                            //             <div className='card-right-side'>
+                            //                 <p>{info.description}</p>
+                            //             </div>
+                            //         </div>
+                            //     </div>
+                            //     <div className='recommended-book-card'>
+                            //         <div className='card-left-side'>
+                            //             <h4>
+                            //                 <span>
+                            //                     <Link
+                            //                         to={'/book/' + info.id}
+                            //                     >
+                            //                         {info.title}
+                            //                     </Link>
+                            //                 </span>
+                            //             </h4>
+                            //             <img className='card-image' src={info.image} alt='book cover' width='100'></img>
+                            //             <div className='card-right-side'>
+                            //                 <p>{info.description}</p>
+                            //             </div>
+                            //         </div>
+                            //     </div>
+                            // </section>
+                            <BookCard key={index} data={info} authorInformation={authorInformation}></BookCard>
+                        )
+                    })
                 )}
             </div>
-            {bookInformation && bookInformation.length > 0 && (
-                bookInformation.map((info, index) => {
-                    return (
-                        // <section key={index} className='recommended-book-list'>
-                        //     <h3>If you are interested in {authorInformation.name} writing style. Check out these books:</h3>
-                        //     <div className='recommended-book-card'>
-                        //         <div className='card-left-side'>
-                        //             <h4>
-                        //                 <span>
-                        //                     <Link
-                        //                         to={'/book/' + info.id}
-                        //                     >
-                        //                         {info.title}
-                        //                     </Link>
-                        //                 </span>
-                        //             </h4>
-                        //             <img className='card-image' src={info.image} alt='book cover' width='100'></img>
-                        //             <div className='card-right-side'>
-                        //                 <p>{info.description}</p>
-                        //             </div>
-                        //         </div>
-                        //     </div>
-                        //     <div className='recommended-book-card'>
-                        //         <div className='card-left-side'>
-                        //             <h4>
-                        //                 <span>
-                        //                     <Link
-                        //                         to={'/book/' + info.id}
-                        //                     >
-                        //                         {info.title}
-                        //                     </Link>
-                        //                 </span>
-                        //             </h4>
-                        //             <img className='card-image' src={info.image} alt='book cover' width='100'></img>
-                        //             <div className='card-right-side'>
-                        //                 <p>{info.description}</p>
-                        //             </div>
-                        //         </div>
-                        //     </div>
-                        //     <div className='recommended-book-card'>
-                        //         <div className='card-left-side'>
-                        //             <h4>
-                        //                 <span>
-                        //                     <Link
-                        //                         to={'/book/' + info.id}
-                        //                     >
-                        //                         {info.title}
-                        //                     </Link>
-                        //                 </span>
-                        //             </h4>
-                        //             <img className='card-image' src={info.image} alt='book cover' width='100'></img>
-                        //             <div className='card-right-side'>
-                        //                 <p>{info.description}</p>
-                        //             </div>
-                        //         </div>
-                        //     </div>
-                        // </section>
-                        <BookCard key={index} data={info} authorInformation={authorInformation}></BookCard>
-                    )
-                })
-
-            )}
 
         </Container>
     )

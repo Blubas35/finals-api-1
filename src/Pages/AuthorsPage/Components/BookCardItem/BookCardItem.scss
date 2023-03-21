@@ -1,0 +1,15 @@
+.book-card-link {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    text-decoration: none;
+}
+
+.biography-content {
+    @media only screen and (min-width: 581px) and (max-width: 800px) {
+        width: 100%;
+    }
+}
+// @media only screen and (min-width: 581px) and (max-width: 800px) {
+//     width: 100%;
+// }

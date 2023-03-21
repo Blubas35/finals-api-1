@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom"
 import './MainNavigation.scss'
 import logo from '../../Components/Images/logo.png'
+import { useState } from "react";
+import TopNavBar from "../../Components/functions/TopNavBar";
 
 const MainNavigation = () => {
     return (
@@ -9,7 +11,7 @@ const MainNavigation = () => {
                 <div className="navigation-logo-wrapper">
                     <img className="navigation-logo" src={logo} alt='page logo'></img>
                 </div>
-                <ul className='main-navigation'>
+                <ul className={`main-navigation`}>
                     <NavLink className='item-link' to='/homePage'> <li className="main-navigation-item">
                         Home page
                     </li> </NavLink>
@@ -20,8 +22,9 @@ const MainNavigation = () => {
                         Books List page
                     </li> </NavLink>
                 </ul>
+                <TopNavBar></TopNavBar>
             </div>
-        </div >
+        </div>
     )
 }
 

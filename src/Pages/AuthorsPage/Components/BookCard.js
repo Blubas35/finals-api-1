@@ -1,60 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import BookCardItem from './BookCardItem/BookCardItem'
+import './BookCard.scss'
 
-const BookCard = ({data, authorInformation}) => {
+const BookCard = ({ data, authorInformation }) => {
+    // jeigu nori keisti book card reikai eiti i authors page ir keisti per data props
     return (
         <section className='recommended-book-list'>
             <h3>If you are interested in {authorInformation.name} writing style. Check out these books:</h3>
-            <div className='recommended-book-card'>
-                <div className='card-left-side'>
-                    <h4>
-                        <span>
-                            <Link
-                                to={'/book/' + data.id}
-                            >
-                                {data.title}
-                            </Link>
-                        </span>
-                    </h4>
-                    <img className='card-image' src={data.image} alt='book cover' width='100'></img>
-                    <div className='card-right-side'>
-                        <p>{data.description}</p>
-                    </div>
-                </div>
-            </div>
-            <div className='recommended-book-card'>
-                <div className='card-left-side'>
-                    <h4>
-                        <span>
-                            <Link
-                                to={'/book/' + data.id}
-                            >
-                                {data.title}
-                            </Link>
-                        </span>
-                    </h4>
-                    <img className='card-image' src={data.image} alt='book cover' width='100'></img>
-                    <div className='card-right-side'>
-                        <p>{data.description}</p>
-                    </div>
-                </div>
-            </div>
-            <div className='recommended-book-card'>
-                <div className='card-left-side'>
-                    <h4>
-                        <span>
-                            <Link
-                                to={'/book/' + data.id}
-                            >
-                                {data.title}
-                            </Link>
-                        </span>
-                    </h4>
-                    <img className='card-image' src={data.image} alt='book cover' width='100'></img>
-                    <div className='card-right-side'>
-                        <p>{data.description}</p>
-                    </div>
-                </div>
+            <div className='book-card-wrapper'>
+                <BookCardItem info={data} authorInformation={authorInformation}></BookCardItem>
+                <BookCardItem info={data} authorInformation={authorInformation}></BookCardItem>
+                <BookCardItem info={data} authorInformation={authorInformation}></BookCardItem>
             </div>
         </section>
     )

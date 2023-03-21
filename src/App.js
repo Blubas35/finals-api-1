@@ -7,6 +7,7 @@ import Book from './Pages/Book/Book';
 import AuthorsPage from './Pages/AuthorsPage/AuthorsPage';
 import Search from './Pages/Search/Search';
 import HomePage from './Pages/HomePage/HomePage';
+import 'font-awesome/css/font-awesome.min.css';
 
 
 function App() {
