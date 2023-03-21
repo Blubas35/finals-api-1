@@ -1,6 +1,13 @@
+@import '../../Components/styles/BreakPoints.scss';
+
 .main-header {
   display: flex;
   justify-content: space-between;
+
+  @include breakpoint-680 {
+    flex-direction: column-reverse;
+    row-gap: 30px;
+  }
 }
 
 .genre-wrapper {
@@ -11,6 +18,14 @@
   & select {
     width: 50%;
     cursor: pointer;
+
+    @include breakpoint-680 {
+      width: 30%;
+    }
+  }
+
+  @include breakpoint-680 {
+    justify-content: unset;
   }
 }
 
@@ -27,5 +42,26 @@
 
   & input {
     width: 50%;
+
+    @include breakpoint-680 {
+      width: 30%;
+    }
+  }
+
+  @include breakpoint-680 {
+    justify-content: unset;
+  }
+}
+
+// jeigu search results atsiranda
+.search-item {
+  display: flex;
+  column-gap: 30px;
+}
+
+.content-wrapper {
+  width: 70%;
+  @include breakpoint-600 {
+    width: 100%;
   }
 }

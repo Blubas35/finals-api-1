@@ -1,7 +1,10 @@
+@import '../../../Components/styles/BreakPoints.scss';
+
 .list-wrapper {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+    
   }
 
 .book-item {
@@ -14,9 +17,23 @@
         -webkit-box-shadow: 12px 13px 40px -21px rgba(0,0,0,0.52);
         -moz-box-shadow: 12px 13px 40px -21px rgba(0,0,0,0.52);
     }
+    @include breakpoint-992 {
+      width: 100%;
+    }
+    @include breakpoint-680 {
+      width: 100%;
+      column-gap: 15px;
+    }
+
+    .book-right-side {
+      @include breakpoint-680 {
+        width: 68%;
+      }
+    }
   }
 
   .book-category-wrapper {
     padding-top: 30px;
   }
+
 

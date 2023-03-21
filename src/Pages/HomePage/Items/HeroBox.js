@@ -9,7 +9,7 @@ const HeroBox = ({ image }) => {
                 style={{
                     backgroundImage: `url(${image})`,
                     backgroundSize: 'cover',
-                    height: '70vh'
+                    
                 }}
             >
                 <div className='hero-box-overlay'>

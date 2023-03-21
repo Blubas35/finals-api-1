@@ -1,11 +1,16 @@
+@import '../../Components/styles/BreakPoints.scss';
+
 
 .page-content-wrapper {
     display: flex;
     column-gap: 50px;
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+   @include breakpoint-1199 {
         flex-wrap: wrap;
     }
-    @media only screen and (min-width: 481px) and (max-width: 992px) {
+    @include breakpoint-992 {
+        flex-wrap: wrap;
+    }
+    @include mobilePhone {
         flex-wrap: wrap;
     }
 }
@@ -14,6 +19,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
+    @include mobilePhone {
+        grid-template-columns: 1fr;
+    }
 }
 
 .selling-point-left {
@@ -23,6 +31,9 @@
 
 .selling-point-right {
     padding-left: 15px;
+    @include mobilePhone {
+        padding-left: 0;
+    }
   }
 // .selling-point-right {
 
@@ -34,10 +45,13 @@
 
 .left-container {
     width: calc((100% - 30px) / 4 * 3);
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    @include breakpoint-1199 {
         width: 100%;
     }
-    @media only screen and (min-width: 481px) and (max-width: 950px) {
+    @include breakpoint-992 {
+        width: 100%;
+    }
+    @include mobilePhone {
         width: 100%;
     }
 }

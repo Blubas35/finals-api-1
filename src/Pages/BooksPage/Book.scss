@@ -1,4 +1,4 @@
-
+@import '../../Components/styles/BreakPoints.scss';
 // input[type="submit"]:hover {
 //     opacity: 75%;
 // }
@@ -58,6 +58,15 @@ label {
     .col-75,
     input[type=submit] {
         width: 28%;
+        margin-top: 0;
+    }
+}
+
+@include mobilePhone {
+    .col-25,
+    .col-75,
+    input[type=submit] {
+        width: 40%;
         margin-top: 0;
     }
 }

@@ -77,7 +77,6 @@ const Book = () => {
                     setNewReviewBody('');
                 })
         }
-
     }
 
     const deleteHandler = (reviewId) => {

@@ -1,14 +1,19 @@
+@import '../../../Components/styles/BreakPoints.scss';
+
 .right-container {
     width: calc((100% - 30px) / 4);
     row-gap: 30px;
     display: flex;
     flex-direction: column;
 
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+   @include breakpoint-1199 {
         width: 100%;
     }
 
-    @media only screen and (min-width: 481px) and (max-width: 950px) {
+    @include breakpoint-992 {
+        width: 100%;
+    }
+    @include mobilePhone {
         width: 100%;
     }
 }

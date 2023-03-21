@@ -1,10 +1,12 @@
-// .hero-box-overlay {
-//     position: relative;
-//     height: 100%;
-//     background-color: rgba(0, 0, 0, 0.5);
-// }
+@import '../../../Components/styles/BreakPoints.scss';
+
 .hero-box-background {
     position: relative;
+    height: 50vh;
+
+    @include breakpoint-992 {
+        height: 30vh;
+    }
 }
 
 .hero-box-text {
@@ -20,8 +22,11 @@
     box-shadow: 12px 13px 40px -13px rgba(0, 0, 0, 0.52);
     -webkit-box-shadow: 12px 13px 40px -13px rgba(0, 0, 0, 0.52);
     -moz-box-shadow: 12px 13px 40px -13px rgba(0, 0, 0, 0.52);
-    @media only screen and (min-width: 481px) and (max-width: 950px) {
+    @include breakpoint-992 {
         width: 50%;
+    }
+    @include breakpoint-600 {
+        width: 75%;
     }
 }
 
