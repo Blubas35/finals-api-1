@@ -28,8 +28,37 @@ const HomePage = () => {
     //         })
 
     // }, [])
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/books/')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setBooksData(data)
+    //             setIsLoading(false)
+    //         })
+
+    // }, [])
+
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/authors/')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setAuthorsData(data)
+    //             setAuthorsImage(data.map(author => author.image))
+    //             setIsLoading(false)
+    //         })
+
+    // }, [])
+
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/reviews?_limit=3')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setReviewsData(data)
+    //             setIsLoading(false)
+    //         })
+    // }, [])
     useEffect(() => {
-        fetch('http://localhost:3000/books/')
+        fetch('https://my-json-server.typicode.com/Blubas35/data.json/books/')
             .then(res => res.json())
             .then(data => {
                 setBooksData(data)
@@ -39,7 +68,7 @@ const HomePage = () => {
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:3000/authors/')
+        fetch('https://my-json-server.typicode.com/Blubas35/data.json/authors/')
             .then(res => res.json())
             .then(data => {
                 setAuthorsData(data)
@@ -50,7 +79,7 @@ const HomePage = () => {
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:3000/reviews?_limit=3')
+        fetch('https://my-json-server.typicode.com/Blubas35/data.json/reviews?_limit=3')
             .then(res => res.json())
             .then(data => {
                 setReviewsData(data)
