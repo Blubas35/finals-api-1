@@ -9,4 +9,12 @@
     @include breakpoint-992 {
         column-gap: 15px;
     }
+    @include mobilePhone {
+        justify-content: center;
+    }
+}
+.card-slide-title {
+    @include mobilePhone {
+        text-align: center;
+    }
 }

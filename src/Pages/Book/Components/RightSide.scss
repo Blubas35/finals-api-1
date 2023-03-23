@@ -1,3 +1,5 @@
+@import '../../../Components/styles/BreakPoints.scss';
+
 .book-item-content {
     display: flex;
     flex-wrap: wrap;
@@ -7,5 +9,22 @@
     box-shadow: 12px 13px 40px -21px rgba(0, 0, 0, 0.52);
     -webkit-box-shadow: 12px 13px 40px -21px rgba(0, 0, 0, 0.52);
     -moz-box-shadow: 12px 13px 40px -21px rgba(0, 0, 0, 0.52);
+    
+    @include breakpoint-992 {
+        width: 90%;
+        padding-right: 15px;
+    }
+}
 
+.book-wrapper {
+
+    .left-side {
+        @include breakpoint-680 {
+            align-self: center;
+        }
+    }
+
+    @include breakpoint-680 {
+        flex-direction: column;
+    }
 }

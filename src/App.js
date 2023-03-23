@@ -22,12 +22,7 @@ function App() {
         <Route path='/author/:authorId' element={<AuthorsPage></AuthorsPage>}></Route>
         <Route path='/reviews' element={<Reviews></Reviews>}></Route>
         <Route path='/search/:keyword' element={<Search />}/>
-        <Route path='/' element={
-          <div>
-            <Link to='/books'>Books</Link>
-            <Link to='/reviews'>Reviews</Link>
-          </div>
-        }></Route>
+        <Route path='/' element={<HomePage />}></Route>
       </Routes>
     </div>
   );

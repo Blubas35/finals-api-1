@@ -1,3 +1,5 @@
+@import '../../Components/styles/BreakPoints.scss';
+
 .author-personal-info-wrapper {
     display: flex;
     flex-direction: column;
@@ -7,6 +9,14 @@
 .author-information-wrapper {
     display: flex;
     column-gap: 30px;
+
+    @include breakpoint-680 {
+        flex-direction: column;   
+    }
+}
+
+.author-image-wrapper {
+    align-self: center;
 }
 
 // .author-image {
@@ -16,6 +26,7 @@
 .author-biography {
     display: flex;
     flex-direction: column;
+    padding: 0 15px;
 
     & .button {
         align-self: flex-start;
@@ -31,14 +42,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 15px;
-  }
-  
-  .button {
+}
+
+.button {
     justify-self: flex-start;
-  }
-  
-  .form-control {
+}
+
+.form-control {
     display: flex;
     flex-direction: column;
     grid-column: 1;
-  }
+}

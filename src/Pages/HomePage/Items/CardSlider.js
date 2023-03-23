@@ -6,7 +6,7 @@ const CardSlider = ({ booksData }) => {
     console.log(booksData)
     return (
         <>
-            <h3>What will you discover?</h3>
+            <h3 className='card-slide-title'>What will you discover?</h3>
             <div className='card-slide-wrapper'>
                 {booksData && booksData.length > 0 && (
                     booksData.map((data, index) => (
