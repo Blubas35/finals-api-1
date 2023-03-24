@@ -8,7 +8,7 @@ const Reviews = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:3000/reviews?_expand=book')
+        fetch('https://my-json-server.typicode.com/Blubas35/data.json/reviews?_expand=book')
             .then(res => res.json())
             .then(data => {
                 setReviewsData(data)

@@ -17,7 +17,7 @@ const Search = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:3000/books?q=${keyword}`)
+        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/books?q=${keyword}`)
             .then(res => res.json())
             .then(results => {
                 setBookSearch(results)
@@ -27,7 +27,7 @@ const Search = () => {
     }, [keyword])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/reviews?q=${keyword}`)
+        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/reviews?q=${keyword}`)
             .then(res => res.json())
             .then(results => {
                 setReviewsSearch(results)
@@ -36,7 +36,7 @@ const Search = () => {
     }, [keyword])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/authors?q=${keyword}`)
+        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/authors?q=${keyword}`)
             .then(res => res.json())
             .then(results => {
                 setAuthorsSearch(results)

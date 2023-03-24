@@ -17,7 +17,7 @@ const AuthorsPage = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        fetch(`http://localhost:3000/authors/${authorId}`)
+        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/authors/${authorId}`)
             .then(res => res.json())
             .then(authorData => {
                 setAuthorInformation(authorData)
@@ -26,7 +26,7 @@ const AuthorsPage = () => {
     }, [authorId])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/books?authorId=${authorId}`)
+        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/books?authorId=${authorId}`)
             .then(res => res.json())
             .then(data => {
                 setBookInformation(data)
@@ -51,7 +51,7 @@ const AuthorsPage = () => {
 
     const submitFormHandler = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:3000/authors/${authorId}`, {
+        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/authors/${authorId}`, {
             method: 'PATCH',
             body: JSON.stringify({
                 id: 1,
@@ -65,7 +65,7 @@ const AuthorsPage = () => {
         })
             .then((response) => response.json())
             .then((json) => {
-                fetch(`http://localhost:3000/authors/${authorId}`)
+                fetch(`https://my-json-server.typicode.com/Blubas35/data.json/authors/${authorId}`)
                     .then((res) => res.json())
                     .then((data) => {
                         console.log(data);

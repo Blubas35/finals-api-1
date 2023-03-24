@@ -19,7 +19,7 @@ const Books = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:3000/books/')
+        fetch('https://my-json-server.typicode.com/Blubas35/data.json/books/')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -33,7 +33,7 @@ const Books = () => {
     const keywordHandler = (e) => setKeyword(e.target.value)
 
     useEffect(() => {
-        fetch('http://localhost:3000/category/')
+        fetch('https://my-json-server.typicode.com/Blubas35/data.json/category/')
             .then(res => res.json())
             .then(data => {
                 const uniqueCategories = data.map(category => category.genre)
@@ -44,7 +44,7 @@ const Books = () => {
     const formSubmitHandler = (e) => {
         e.preventDefault()
         console.log(selectedInput)
-        fetch(`http://localhost:3000/books?category=${selectedInput}`)
+        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/books?category=${selectedInput}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
