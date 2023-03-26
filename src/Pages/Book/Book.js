@@ -27,7 +27,7 @@ const Book = () => {
     const [rating, setRating] = useState(0);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/books/${id}`)
+        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/books/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBookTitle(data.title)
@@ -40,7 +40,7 @@ const Book = () => {
             })
     }, [id])
     useEffect(() => {
-        fetch(`http://localhost:3000/reviews?bookId=${id}`)
+        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/reviews?bookId=${id}`)
             .then(res => res.json())
             .then(data => {
                 setBookReviews(data)
@@ -64,7 +64,7 @@ const Book = () => {
                 comment: newReviewBody,
             }
 
-            fetch(`http://localhost:3000/reviews?bookId=${id}`, {
+            fetch(`https://my-json-server.typicode.com/Blubas35/data.json/reviews?bookId=${id}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newReview),
@@ -81,12 +81,12 @@ const Book = () => {
 
     const deleteHandler = (reviewId) => {
         console.log(reviewId)
-        fetch(`http://localhost:3000/reviews/${reviewId}`, {
+        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/reviews/${reviewId}`, {
             method: 'DELETE',
         })
             .then((response) => response.json())
             .then((json) => {
-                fetch(`http://localhost:3000/reviews?bookId=${id}`)
+                fetch(`https://my-json-server.typicode.com/Blubas35/data.json/reviews?bookId=${id}`)
                     .then(res => res.json())
                     .then(postsData => {
                         setBookReviews(postsData)
@@ -106,7 +106,7 @@ const Book = () => {
 
     const updateReviewHandler = (reviewId) => {
         console.log(reviewId)
-        fetch(`http://localhost:3000/reviews/${reviewId}`, {
+        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/reviews/${reviewId}`, {
             method: 'PATCH',
             body: JSON.stringify({
                 id: 1,
@@ -121,7 +121,7 @@ const Book = () => {
         })
             .then((response) => response.json())
             .then((json) => {
-                fetch(`http://localhost:3000/reviews?bookId=${id}`)
+                fetch(`https://my-json-server.typicode.com/Blubas35/data.json/reviews?bookId=${id}`)
                     .then(res => res.json())
                     .then(reviewData => {
                         setBookReviews(reviewData)
