@@ -151,14 +151,8 @@
       "comment": "A delightful romance with charming characters.",
       "image": "https://randomuser.me/api/portraits/women/2.jpg",
       "reviewer": "Sarah Johnson"
-    },
-    {
-      "bookId": "1",
-      "reviewer": "",
-      "rating": 0,
-      "comment": "",
-      "id": 8
     }
+
   ],
   "category": [
     {

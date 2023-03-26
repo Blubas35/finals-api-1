@@ -94,6 +94,7 @@ const Book = () => {
             });
 
     }
+    // console.log(bookReviews)
     const editHandler = (reviewData) => {
         console.log(reviewData)
 
@@ -173,6 +174,7 @@ const Book = () => {
                             infoArr={bookReviews}
                             onEdit={editHandler}
                             onDelete={deleteHandler}
+                            starRating={rating}
                         ></ReviewContainer>
                     </div>
                 </>
