@@ -1,4 +1,4 @@
-@import '../../Components/styles/BreakPoints.scss';
+@import '../../Components/styles/BreakPoints';
 
 .author-personal-info-wrapper {
     display: flex;
@@ -36,17 +36,29 @@
 .biography-content {
     width: 75%;
     font-family: "Inter";
+    @include breakpoint-600 {
+        width: 100%;
+    }
 }
 
 .edit-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 15px;
+
+    @include mobilePhone {
+        grid-template-columns: 1fr;
+    }
+    .button {
+        justify-self: flex-start;
+
+        @include mobilePhone {
+            width: 60%;
+        }
+    }
 }
 
-.button {
-    justify-self: flex-start;
-}
+
 
 .form-control {
     display: flex;

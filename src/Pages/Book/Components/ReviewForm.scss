@@ -1,4 +1,4 @@
-@import '../../../Components/styles/BreakPoints.scss';
+@import '../../../Components/styles/BreakPoints';
 
 .review-form {
     display: flex;
@@ -24,7 +24,7 @@
         }
     }
 
-    .form-button {
+    & .form-button {
         align-self: center;
         margin-top: 15px;
 
@@ -32,6 +32,7 @@
             width: 45%;
             margin-top: 0;
         }
+
         @include mobilePhone {
             width: 70%;
             margin-top: 0;
@@ -42,5 +43,7 @@
     .save-changes.button {
         align-self: center;
         margin-top: 15px;
+        grid-column: 1;
     }
+
 }
