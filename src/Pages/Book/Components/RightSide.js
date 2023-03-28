@@ -19,7 +19,7 @@ const RightSide = ({ bookTitle, bookAuthorId, bookAuthor, bookDescription, bookC
                             <p>{bookDescription}</p>
                         </div>
 
-                        <p>Genre: {bookCategory}</p>
+                        <p>Genre: pasikeite {bookCategory}</p>
                     </div>
                 </li>
             </ul>
