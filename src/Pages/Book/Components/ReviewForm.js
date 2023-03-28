@@ -18,7 +18,7 @@ const ReviewForm = ({ onFormSubmit, onNameChange, nameValue, rating, setRating, 
                 <textarea className='textarea-review' onChange={textareaChange} value={textareaValue} name='review-textarea'></textarea>
             </div>
             {!editMode && (
-                <input id='formButton' className='form-button' type='submit' value='Post review!'></input>
+                <input id='formButton' className='form-button' type='submit' value='Post review! pasikeite'></input>
             )}
             {editMode && (
                 <button className='save-changes button' type='submit' onClick={() => updateReview(reviewId)}>Save changes!</button>
