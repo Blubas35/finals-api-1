@@ -91,18 +91,6 @@ span {
   opacity: 75%;
 }
 
-// .button {
-//     background-color: #cd300d;
-//     border: none;
-//     color: white;
-//     padding: 5px 10px;
-//     text-align: center;
-//     text-decoration: none;
-//     display: inline-block;
-//     font-size: 10px;
-//     border-radius: 30px;
-//   }
-
 input[type=text],
 select,
 textarea {
@@ -142,10 +130,6 @@ input[type=submit] {
 
   grid-column: 1;
   justify-self: flex-start;
-
-  @include mobilePhone {
-    width: 100%;
-  }
 }
 
 input[type=submit]:hover {
@@ -182,15 +166,15 @@ input[type=submit]:hover {
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+// @media screen and (max-width: 600px) {
 
-  .col-25,
-  .col-75,
-  input[type=submit] {
-    width: 28%;
-    margin-top: 0;
-  }
-}
+//   .col-25,
+//   .col-75,
+//   input[type=submit] {
+//     width: 28%;
+//     margin-top: 0;
+//   }
+// }
 
 ul {
   list-style-type: none;

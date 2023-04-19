@@ -13,7 +13,8 @@
 .genre-wrapper {
   display: flex;
   justify-content: space-between;
-  column-gap: 15px;
+  row-gap: 15px;
+  flex-direction: column;
 
   & select {
     width: 50%;
@@ -26,6 +27,15 @@
 
   @include breakpoint-680 {
     justify-content: unset;
+  }
+
+  .form-control {
+    flex-direction: row;
+    column-gap: 10px;
+
+    & .button {
+      width: 170px;
+    }
   }
 }
 
@@ -51,6 +61,10 @@
   @include breakpoint-680 {
     justify-content: unset;
   }
+
+  & .button {
+    width: 150px;
+  }
 }
 
 // jeigu search results atsiranda
@@ -61,6 +75,7 @@
 
 .content-wrapper {
   width: 70%;
+
   @include breakpoint-600 {
     width: 100%;
   }

@@ -92,7 +92,6 @@ const Book = () => {
                         setBookReviews(postsData)
                     });
             });
-
     }
     // console.log(bookReviews)
     const editHandler = (reviewData) => {

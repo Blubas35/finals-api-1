@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Container from '../../Components/container/Container'
 import AuthorsSearch from './items/AuthorsSearch'
 import BookSearch from './items/BookSearch'
@@ -17,32 +17,35 @@ const Search = () => {
 
 
     useEffect(() => {
-        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/books?q=${keyword}`)
-            .then(res => res.json())
-            .then(results => {
-                setBookSearch(results)
-                setBookTitle(results.map(result => result.title))
-                SetIsLoading(false)
-            })
-    }, [keyword])
+        if (keyword) {
+            fetch(`https://my-json-server.typicode.com/Blubas35/data.json/books?q=${keyword}`)
+                .then((res) => res.json())
+                .then((results) => {
+                    setBookSearch(results);
+                    setBookTitle(results.map((result) => result.title));
+                    SetIsLoading(false);
+                });
 
-    useEffect(() => {
-        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/reviews?q=${keyword}`)
-            .then(res => res.json())
-            .then(results => {
-                setReviewsSearch(results)
-                SetIsLoading(false)
-            })
-    }, [keyword])
+            fetch(`https://my-json-server.typicode.com/Blubas35/data.json/reviews?q=${keyword}`)
+                .then((res) => res.json())
+                .then((results) => {
+                    setReviewsSearch(results);
+                    SetIsLoading(false);
+                });
 
-    useEffect(() => {
-        fetch(`https://my-json-server.typicode.com/Blubas35/data.json/authors?q=${keyword}`)
-            .then(res => res.json())
-            .then(results => {
-                setAuthorsSearch(results)
-                SetIsLoading(false)
-            })
-    }, [keyword])
+            fetch(`https://my-json-server.typicode.com/Blubas35/data.json/authors?q=${keyword}`)
+                .then((res) => res.json())
+                .then((results) => {
+                    setAuthorsSearch(results);
+                    SetIsLoading(false);
+                });
+        } else {
+            setBookSearch([]);
+            setReviewsSearch([]);
+            setAuthorsSearch([]);
+            SetIsLoading(false);
+        }
+    }, [keyword]);
 
     return (
         <Container>
@@ -51,6 +54,9 @@ const Search = () => {
             ) : (
                 keyword && keyword.length > 0 && (
                     <>
+                        <Link to={'/books'} className='button'>
+                            Back to the last page
+                        </Link>
                         <BookSearch data={bookSearch} keyword={keyword}></BookSearch>
 
                         <ReviewSearch data={reviewsSearch} keyword={keyword}></ReviewSearch>
@@ -63,8 +69,13 @@ const Search = () => {
                     </>
                 )
             )}
-            {bookSearch.length === 0 && reviewsSearch.length === 0 && authorsSearch.length === 0 && (
-                <h2> No results found... </h2>
+            {!isLoading && bookSearch.length === 0 && reviewsSearch.length === 0 && authorsSearch.length === 0 && (
+                <>
+                    <h2> No results found... </h2>
+                    <Link to={'/books'} className='button'>
+                        Back to the last page
+                    </Link>
+                </>
             )}
         </Container>
     )

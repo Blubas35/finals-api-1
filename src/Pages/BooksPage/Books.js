@@ -78,25 +78,27 @@ const Books = () => {
                         <header className='main-header'>
                             <div className='form-wrapper'>
                                 <form className='genre-wrapper' onSubmit={formSubmitHandler}>
-                                    <select onChange={optionValue} value={selectedInput}>
-                                        {categories.map((category, index) => (
-                                            <option key={index}>{firstLetterUpperCase(category)}</option>
-                                        ))}
-                                    </select>
-                                    <input className='button' type='submit' value='Search By Genre' />
+                                    <div className='form-control'>
+                                        <select onChange={optionValue} value={selectedInput}>
+                                            {categories.map((category, index) => (
+                                                <option key={index}>{firstLetterUpperCase(category)}</option>
+                                            ))}
+                                        </select>
+                                        <input className='button' type='submit' value='Search By Genre' />
+                                    </div>
+                                    <div className='input-wrapper'>
+                                        <input
+                                            type='text'
+                                            name='keyword'
+                                            onChange={keywordHandler}
+                                            value={keyword}
+                                            placeholder='Search...'
+                                        />
+                                        <Link to={'/search/' + keyword} className='button'>
+                                            Search by keyword
+                                        </Link>
+                                    </div>
                                 </form>
-                            </div>
-                            <div className='input-wrapper'>
-                                <input
-                                    type='text'
-                                    name='keyword'
-                                    onChange={keywordHandler}
-                                    value={keyword}
-                                    placeholder='Search...'
-                                />
-                                <Link to={'/search/' + keyword}>
-                                    <button className='button'>Search by keyword</button>
-                                </Link>
                             </div>
                         </header>
 
