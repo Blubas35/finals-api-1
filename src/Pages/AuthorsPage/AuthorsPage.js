@@ -100,15 +100,15 @@ const AuthorsPage = () => {
                         <form className='edit-form' onSubmit={submitFormHandler}>
                             <div className='form-control'>
                                 <label htmlFor='fullName'>Authors full name: </label>
-                                <input name='fullName' type='text' value={authorName} onChange={fullNameHandler}></input>
+                                <input id='fullName' name='fullName' type='text' value={authorName} onChange={fullNameHandler}></input>
                             </div>
                             <div className='form-control'>
                                 <label htmlFor='author-image'>Authors image url:  </label>
-                                <input name='author-image' type='text' value={authorImage} onChange={imageUrlHandler}></input>
+                                <input id='author-image' name='author-image' type='text' value={authorImage} onChange={imageUrlHandler}></input>
                             </div>
                             <div className='form-control'>
                                 <label htmlFor='author-description'>Authors description: </label>
-                                <textarea name='author-description' type='text' value={authorDescription} onChange={authorDescriptionHandler} rows="10" cols="75"></textarea>
+                                <textarea id='author-description' name='author-description' type='text' value={authorDescription} onChange={authorDescriptionHandler} rows="10" cols="75"></textarea>
                             </div>
                             <input className='button' type='submit' value='Save changes!'></input>
                         </form>
