@@ -54,4 +54,20 @@
     @include mobilePhone {
         width: 100%;
     }
+    & .card-slide-title {
+        @include mobilePhone {
+            font-size: 36px;
+        }
+    }
+    & .card-slide-wrapper {
+        .card-item {
+            img {
+                @include mobilePhone {
+                    height: 300px;
+                    width: 200px;
+                }
+            }
+        }
+    }
 }
+
